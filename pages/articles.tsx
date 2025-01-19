@@ -1,6 +1,17 @@
-import { NavBar } from '../components/nav-bar'
+import { NavBar } from '../components/nav-bar';
 
-export default function AboutPage() {
+const articles = [
+    {
+        title: "Hello world!",
+        subtitle: "I want to be the king of pirates!",
+        author: "admin",
+        date: "August 18, 2023",
+        imageUrl: "images/my_articles/luffy-gear5.jpg"
+    },
+    // Add more articles as needed
+];
+
+export default function ArticlesPage() {
     return (
         <main className="min-h-screen bg-white">
             <NavBar />
@@ -10,32 +21,28 @@ export default function AboutPage() {
                         Articles
                     </h1>
                     <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
-                        ARTICLES CURATED BY DSAI
+                        ARTICLES THAT I WROTE
                     </div>
                 </header>
 
                 <section className="mb-16">
                     <h2 className="uppercase text-sm font-small tracking-wider text-muted-foreground mb-8">
-                        ARTICLES CURATED BY DSAI
+                        LIST OF ARTICLES
                     </h2>
                     <div className="space-y-8">
-                        <p className="leading-relaxed">
-                            The invention of Bitcoin was a revolutionary moment for humanity because it introduced two simultaneously united yet distinct technological innovations, reshaping the way that humans organize themselves. Primarily, it was the first ever decentralized currency, which gave humanity a shared value system - one that could not be mutated by vested or centralized interests. With this, Bitcoin promised a future of fair, anti-fiat, finance.
-                        </p>
-                        <p className="leading-relaxed">
-                            Secondly and to achieve this aim, it birthed the original, disseminated, and permissionless digital commodity market. This second point has not been overlooked by anyone who has been watching closely - the Bitcoin network's computational power, measured in raw hashing power, has blast past the potential of any company or government.
-                        </p>
-                        <p className="leading-relaxed">
-                            Bittensor is essentially a language for writing numerous decentralized commodity markets, or 'subnets', situated under a unified token system. These distinct markets function through Bittensor's blockchain, allowing each to interact and join into a singular computing infrastructure. By analogy, Bittensor brings the same type of abstraction which Ethereum added to Bitcoin for running decentralized contracts, but onto Bitcoin's inverse innovation — <span className="italic">digital markets</span>.
-                        </p>
-                        <p className="leading-relaxed">
-                            Compared to Bitcoin and other cryptocurrencies attempting to leverage the digital marketplace, Bittensor has built a framework that provides ease for creating these viable and enormously powerful systems. However, its genius lies in the fact that every one of these inter-networked markets is connectable, and available, to the whole. Building a hierarchical web of resources, ultimately culminating in the creation of a decentralized intelligence market.
-                        </p>
+                        {articles.map((article, index) => (
+                            <div key={index} className="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8">
+                                <img src={article.imageUrl} alt={article.title} className="h-48 w-48 object-contain" />
+                                <div className="flex flex-col space-y-2">
+                                    <h3 className="text-2xl font-bold">{article.title}</h3>
+                                    <p className="text-lg italic">{article.subtitle}</p>
+                                    <p className="text-sm text-muted-foreground">Posted by {article.author} on {article.date}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-
                 </section>
             </article>
         </main>
-    )
+    );
 }
-

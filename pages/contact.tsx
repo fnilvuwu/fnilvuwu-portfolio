@@ -1,4 +1,4 @@
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import { NavBar } from '../components/nav-bar'
 
 export default function ContactPage() {
@@ -48,13 +48,6 @@ export default function ContactPage() {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center space-x-4">
-                                    <PhoneIcon className="h-6 w-6 text-gray-600" />
-                                    <div>
-                                        <p className="font-medium">Phone</p>
-                                        <p className="text-muted-foreground">+62 411 123456</p>
-                                    </div>
-                                </div>
                             </div>
                         </section>
 
