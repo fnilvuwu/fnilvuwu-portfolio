@@ -1,6 +1,7 @@
 import { NavBar } from '../components/nav-bar'
 
 export default function AboutPage() {
+    // put hobby, and contact here instead
     return (
         <main className="min-h-screen bg-white flex flex-col">
             <NavBar />

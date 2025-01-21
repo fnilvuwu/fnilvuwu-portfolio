@@ -63,7 +63,7 @@ export function NeuralNetwork() {
             const nextLayer = layers[layerIndex + 1]
             neuron.connections = nextLayer.neurons.map((_, i) => ({
               targetIndex: i,
-              opacity: 0.08 // Reduced base opacity for subtler connections
+              opacity: 0.20 // Reduced base opacity for subtler connections
             }))
           }
         })
@@ -103,7 +103,7 @@ export function NeuralNetwork() {
               ctx.stroke()
 
               // Smoother opacity fade
-              connection.opacity = Math.max(0.08, connection.opacity * 0.95)
+              connection.opacity = Math.max(0.20, connection.opacity * 0.95)
             })
           })
         }

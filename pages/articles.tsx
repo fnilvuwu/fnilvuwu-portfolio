@@ -21,7 +21,7 @@ export default function ArticlesPage() {
                         Articles
                     </h1>
                     <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
-                        ARTICLES THAT I WROTE
+                        ARTICLES THAT I'VE WROTE
                     </div>
                 </header>
 
