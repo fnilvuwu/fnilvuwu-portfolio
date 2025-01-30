@@ -30,20 +30,17 @@ const certifications = [
     { title: 'Belajar Dasar Git dengan GitHub', imageUrl: '/images/my_certificates/Belajar Dasar Git dengan GitHub.jpg', link: 'https://www.dicoding.com/certificates/EYX468Q9WPDL' },
     { title: 'Belajar Dasar Google Cloud', imageUrl: '/images/my_certificates/Belajar Dasar Google Cloud.jpg', link: 'https://www.dicoding.com/certificates/81P236O8JXOY' },
     { title: 'Belajar Dasar Manajemen Proyek', imageUrl: '/images/my_certificates/Belajar Dasar Manajemen Proyek.jpg', link: 'https://www.dicoding.com/certificates/72ZD8MWJJZYW' },
-
-
     { title: 'Belajar Dasar Visualisasi Data', imageUrl: '/images/my_certificates/Belajar Dasar Visualisasi Data.jpg', link: 'https://www.dicoding.com/certificates/JLX1DK625Z72' },
     { title: 'Belajar Membuat Aplikasi Android untuk Pemula', imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Android untuk Pemula.jpg', link: 'https://www.dicoding.com/certificates/2VX3JM1QVPYQ' },
-
     { title: 'Belajar Membuat Aplikasi Flutter untuk Pemula', imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Flutter untuk Pemula.jpg', link: 'https://www.dicoding.com/certificates/53XENGW19XRN' },
     { title: 'Belajar Prinsip Pemrograman SOLID', imageUrl: '/images/my_certificates/Belajar Prinsip Pemrograman SOLID.jpg', link: 'https://www.dicoding.com/certificates/81P236YQ8XOY' },
-   
     { title: 'Memulai Dasar Pemrograman untuk Menjadi Pengembang Software', imageUrl: '/images/my_certificates/Memulai Dasar Pemrograman untuk Menjadi Pengembang Software.jpg', link: 'https://www.dicoding.com/certificates/QLZ9QO9R7Z5D' },
     { title: 'Memulai Pemrograman Dengan Dart', imageUrl: '/images/my_certificates/Memulai Pemrograman Dengan Dart.jpg', link: 'https://www.dicoding.com/certificates/JMZV908ENPN9' },
-   
     { title: 'Memulai Pemrograman Dengan Kotlin', imageUrl: '/images/my_certificates/Memulai Pemrograman Dengan Kotlin.jpg', link: 'https://www.dicoding.com/certificates/JLX1DRRM2Z72' },
     { title: 'Pengenalan ke Logika Pemrograman (Programming Logic 101)', imageUrl: '/images/my_certificates/Pengenalan ke Logika Pemrograman (Programming Logic 101).jpg', link: 'https://www.dicoding.com/certificates/QLZ9QN5O7Z5D' },
-    
+    { title: 'Belajar Dasar AI', imageUrl: '/images/my_certificates/Belajar Dasar AI.jpg', link: 'https://www.dicoding.com/certificates/MRZMN4V50PYQ' },
+    { title: 'Belajar Dasar Pemrograman Web', imageUrl: '/images/my_certificates/Belajar Dasar Pemrograman Web.jpg', link: 'https://www.dicoding.com/certificates/98XWE486LXM3' },
+
     // Add more certifications as needed
 ];
 
