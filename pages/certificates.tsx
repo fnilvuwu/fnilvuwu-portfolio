@@ -40,6 +40,8 @@ const certifications = [
     { title: 'Pengenalan ke Logika Pemrograman (Programming Logic 101)', imageUrl: '/images/my_certificates/Pengenalan ke Logika Pemrograman (Programming Logic 101).jpg', link: 'https://www.dicoding.com/certificates/QLZ9QN5O7Z5D' },
     { title: 'Belajar Dasar AI', imageUrl: '/images/my_certificates/Belajar Dasar AI.jpg', link: 'https://www.dicoding.com/certificates/MRZMN4V50PYQ' },
     { title: 'Belajar Dasar Pemrograman Web', imageUrl: '/images/my_certificates/Belajar Dasar Pemrograman Web.jpg', link: 'https://www.dicoding.com/certificates/98XWE486LXM3' },
+    { title: 'Belajar Membuat Front-End Web untuk Pemula', imageUrl: '/images/my_certificates/Belajar Membuat Front-End Web untuk Pemula.jpg', link: 'https://www.dicoding.com/certificates/53XEDJ6YVPRN' },
+    { title: 'Belajar Membuat Aplikasi Web dengan React', imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Web dengan React.jpg', link: 'https://www.dicoding.com/certificates/GRX5397JVZ0M' },
 
     // Add more certifications as needed
 ];
