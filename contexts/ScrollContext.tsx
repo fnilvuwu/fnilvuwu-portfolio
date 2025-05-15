@@ -27,33 +27,28 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [touchStartY, setTouchStartY] = useState<number | null>(null);
     const [excessScrollDistance, setExcessScrollDistance] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     
     // Configuration for threshold
     const EXCESS_SCROLL_THRESHOLD = 200; // Excess scroll distance required before transition (px)
     
-    // Prevent pull-to-refresh on mobile
+    // Detect mobile device on mount
     useEffect(() => {
-        // This function prevents the default behavior when scrolling at the top
-        const preventPullToRefresh = (e: TouchEvent) => {
-            // Only prevent default when we're at the top of the page
-            const container = document.documentElement;
-            const isAtTop = container.scrollTop <= 10;
-            const currentIndex = sectionOrder.indexOf(currentSection);
-            
-            // Only prevent if we're not at the first section and we're at the top
-            if (isAtTop && currentIndex > 0) {
-                e.preventDefault();
-            }
+        const checkMobile = () => {
+            const userAgent = typeof window.navigator === 'undefined' ? '' : navigator.userAgent;
+            const mobile = Boolean(
+                userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i)
+            );
+            setIsMobile(mobile);
         };
         
-        // Add the event listener to touchmove
-        document.addEventListener('touchmove', preventPullToRefresh, { passive: false });
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
         
-        // Clean up
         return () => {
-            document.removeEventListener('touchmove', preventPullToRefresh);
+            window.removeEventListener('resize', checkMobile);
         };
-    }, [currentSection]);
+    }, []);
 
     useEffect(() => {
         // Update the current section based on router path
@@ -120,30 +115,6 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
     useEffect(() => {
         const handleTouchStart = (e: TouchEvent) => {
             setTouchStartY(e.touches[0].clientY);
-            
-            // Prevent pull-to-refresh at the top of non-first sections
-            const container = document.documentElement;
-            const isAtTop = container.scrollTop <= 10;
-            const currentIndex = sectionOrder.indexOf(currentSection);
-            
-            if (isAtTop && currentIndex > 0) {
-                e.preventDefault();
-            }
-        };
-
-        const handleTouchMove = (e: TouchEvent) => {
-            if (touchStartY === null) return;
-            
-            // Prevent pull-to-refresh at the top of non-first sections
-            const container = document.documentElement;
-            const isAtTop = container.scrollTop <= 10;
-            const currentIndex = sectionOrder.indexOf(currentSection);
-            const touchDiff = touchStartY - e.touches[0].clientY;
-            
-            // If we're at the top and user is pulling down (negative touchDiff)
-            if (isAtTop && currentIndex > 0 && touchDiff < 0) {
-                e.preventDefault();
-            }
         };
 
         const handleTouchEnd = (e: TouchEvent) => {
@@ -153,13 +124,12 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
             const touchDiff = touchStartY - touchEndY;
             const container = document.documentElement;
             const isAtBottom = container.scrollHeight - container.scrollTop <= container.clientHeight + 10;
-            const isAtTop = container.scrollTop <= 10;
             const currentIndex = sectionOrder.indexOf(currentSection);
 
             // Minimum swipe distance to detect
             const minSwipeDistance = 50;
 
-            // Swiping up and at bottom
+            // Swiping up and at bottom - allow navigation forward on mobile
             if (touchDiff > minSwipeDistance && currentIndex < sectionOrder.length - 1 && isAtBottom) {
                 // For touch events, we'll use the swipe distance directly
                 setExcessScrollDistance(prev => {
@@ -172,9 +142,9 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
                     }
                     return newValue;
                 });
-            }
-            // Swiping down and at top
-            else if (touchDiff < -minSwipeDistance && currentIndex > 0 && isAtTop) {
+            } 
+            // Swiping down and at top - ONLY allow navigation backward on desktop
+            else if (!isMobile && touchDiff < -minSwipeDistance && currentIndex > 0) {
                 // For touch events, we'll use the absolute swipe distance
                 setExcessScrollDistance(prev => {
                     const newValue = prev + Math.abs(touchDiff);
@@ -194,16 +164,14 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
             setTouchStartY(null);
         };
 
-        window.addEventListener('touchstart', handleTouchStart, { passive: false });
-        window.addEventListener('touchmove', handleTouchMove, { passive: false });
+        window.addEventListener('touchstart', handleTouchStart, { passive: true });
         window.addEventListener('touchend', handleTouchEnd, { passive: true });
 
         return () => {
             window.removeEventListener('touchstart', handleTouchStart);
-            window.removeEventListener('touchmove', handleTouchMove);
             window.removeEventListener('touchend', handleTouchEnd);
         };
-    }, [touchStartY, currentSection, isTransitioning, excessScrollDistance]);
+    }, [touchStartY, currentSection, isTransitioning, excessScrollDistance, isMobile]);
 
     // Handle keyboard navigation (accessibility)
     useEffect(() => {
