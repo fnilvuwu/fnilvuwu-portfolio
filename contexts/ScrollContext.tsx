@@ -26,6 +26,34 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
     const [currentSection, setCurrentSection] = useState<string>('/');
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [touchStartY, setTouchStartY] = useState<number | null>(null);
+    const [excessScrollDistance, setExcessScrollDistance] = useState(0);
+    
+    // Configuration for threshold
+    const EXCESS_SCROLL_THRESHOLD = 200; // Excess scroll distance required before transition (px)
+    
+    // Prevent pull-to-refresh on mobile
+    useEffect(() => {
+        // This function prevents the default behavior when scrolling at the top
+        const preventPullToRefresh = (e: TouchEvent) => {
+            // Only prevent default when we're at the top of the page
+            const container = document.documentElement;
+            const isAtTop = container.scrollTop <= 10;
+            const currentIndex = sectionOrder.indexOf(currentSection);
+            
+            // Only prevent if we're not at the first section and we're at the top
+            if (isAtTop && currentIndex > 0) {
+                e.preventDefault();
+            }
+        };
+        
+        // Add the event listener to touchmove
+        document.addEventListener('touchmove', preventPullToRefresh, { passive: false });
+        
+        // Clean up
+        return () => {
+            document.removeEventListener('touchmove', preventPullToRefresh);
+        };
+    }, [currentSection]);
 
     useEffect(() => {
         // Update the current section based on router path
@@ -48,13 +76,36 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
             scrollTimeout = setTimeout(() => {
                 // Scrolling down and at bottom
                 if (event.deltaY > 0 && currentIndex < sectionOrder.length - 1 && isAtBottom) {
-                    navigateToNextSection();
+                    // Accumulate excess scroll distance
+                    setExcessScrollDistance(prev => {
+                        const newValue = prev + event.deltaY;
+                        
+                        // If we've reached the threshold, navigate and reset
+                        if (newValue >= EXCESS_SCROLL_THRESHOLD) {
+                            navigateToNextSection();
+                            return 0;
+                        }
+                        return newValue;
+                    });
                 } 
                 // Scrolling up and at top
                 else if (event.deltaY < 0 && currentIndex > 0 && isAtTop) {
-                    navigateToPrevSection();
+                    // Accumulate excess scroll distance (use absolute value for easier comparison)
+                    setExcessScrollDistance(prev => {
+                        const newValue = prev + Math.abs(event.deltaY);
+                        
+                        // If we've reached the threshold, navigate and reset
+                        if (newValue >= EXCESS_SCROLL_THRESHOLD) {
+                            navigateToPrevSection();
+                            return 0;
+                        }
+                        return newValue;
+                    });
+                } else {
+                    // Reset excess scroll distance if not at the edge
+                    setExcessScrollDistance(0);
                 }
-            }, 150); // Debounce time
+            }, 50); // Reduced debounce time for smoother experience
         };
 
         window.addEventListener('wheel', handleWheel, { passive: true });
@@ -63,12 +114,36 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
             window.removeEventListener('wheel', handleWheel);
             clearTimeout(scrollTimeout);
         };
-    }, [currentSection, isTransitioning]);
+    }, [currentSection, isTransitioning, excessScrollDistance]);
 
     // Handle touch events (mobile)
     useEffect(() => {
         const handleTouchStart = (e: TouchEvent) => {
             setTouchStartY(e.touches[0].clientY);
+            
+            // Prevent pull-to-refresh at the top of non-first sections
+            const container = document.documentElement;
+            const isAtTop = container.scrollTop <= 10;
+            const currentIndex = sectionOrder.indexOf(currentSection);
+            
+            if (isAtTop && currentIndex > 0) {
+                e.preventDefault();
+            }
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            if (touchStartY === null) return;
+            
+            // Prevent pull-to-refresh at the top of non-first sections
+            const container = document.documentElement;
+            const isAtTop = container.scrollTop <= 10;
+            const currentIndex = sectionOrder.indexOf(currentSection);
+            const touchDiff = touchStartY - e.touches[0].clientY;
+            
+            // If we're at the top and user is pulling down (negative touchDiff)
+            if (isAtTop && currentIndex > 0 && touchDiff < 0) {
+                e.preventDefault();
+            }
         };
 
         const handleTouchEnd = (e: TouchEvent) => {
@@ -81,29 +156,54 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
             const isAtTop = container.scrollTop <= 10;
             const currentIndex = sectionOrder.indexOf(currentSection);
 
-            // Minimum swipe distance to trigger navigation (px)
+            // Minimum swipe distance to detect
             const minSwipeDistance = 50;
 
             // Swiping up and at bottom
             if (touchDiff > minSwipeDistance && currentIndex < sectionOrder.length - 1 && isAtBottom) {
-                navigateToNextSection();
+                // For touch events, we'll use the swipe distance directly
+                setExcessScrollDistance(prev => {
+                    const newValue = prev + touchDiff;
+                    
+                    // If we've reached the threshold, navigate and reset
+                    if (newValue >= EXCESS_SCROLL_THRESHOLD) {
+                        navigateToNextSection();
+                        return 0;
+                    }
+                    return newValue;
+                });
             }
             // Swiping down and at top
             else if (touchDiff < -minSwipeDistance && currentIndex > 0 && isAtTop) {
-                navigateToPrevSection();
+                // For touch events, we'll use the absolute swipe distance
+                setExcessScrollDistance(prev => {
+                    const newValue = prev + Math.abs(touchDiff);
+                    
+                    // If we've reached the threshold, navigate and reset
+                    if (newValue >= EXCESS_SCROLL_THRESHOLD) {
+                        navigateToPrevSection();
+                        return 0;
+                    }
+                    return newValue;
+                });
+            } else {
+                // Reset excess scroll distance if not at the edge
+                setExcessScrollDistance(0);
             }
 
             setTouchStartY(null);
         };
 
-        window.addEventListener('touchstart', handleTouchStart, { passive: true });
+        window.addEventListener('touchstart', handleTouchStart, { passive: false });
+        window.addEventListener('touchmove', handleTouchMove, { passive: false });
         window.addEventListener('touchend', handleTouchEnd, { passive: true });
 
         return () => {
             window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchmove', handleTouchMove);
             window.removeEventListener('touchend', handleTouchEnd);
         };
-    }, [touchStartY, currentSection, isTransitioning]);
+    }, [touchStartY, currentSection, isTransitioning, excessScrollDistance]);
 
     // Handle keyboard navigation (accessibility)
     useEffect(() => {
@@ -115,15 +215,42 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
             const isAtBottom = container.scrollHeight - container.scrollTop <= container.clientHeight + 10;
             const isAtTop = container.scrollTop <= 10;
 
+            const keyScrollAmount = 50; // Amount to accumulate per key press
+
             // Down arrow or Page Down at bottom
             if ((e.key === 'ArrowDown' || e.key === 'PageDown') && 
                 currentIndex < sectionOrder.length - 1 && isAtBottom) {
-                navigateToNextSection();
+                
+                // Accumulate excess scroll distance
+                setExcessScrollDistance(prev => {
+                    const newValue = prev + keyScrollAmount;
+                    
+                    // If we've reached the threshold, navigate and reset
+                    if (newValue >= EXCESS_SCROLL_THRESHOLD) {
+                        navigateToNextSection();
+                        return 0;
+                    }
+                    return newValue;
+                });
             }
             // Up arrow or Page Up at top
             else if ((e.key === 'ArrowUp' || e.key === 'PageUp') && 
                      currentIndex > 0 && isAtTop) {
-                navigateToPrevSection();
+                
+                // Accumulate excess scroll distance
+                setExcessScrollDistance(prev => {
+                    const newValue = prev + keyScrollAmount;
+                    
+                    // If we've reached the threshold, navigate and reset
+                    if (newValue >= EXCESS_SCROLL_THRESHOLD) {
+                        navigateToPrevSection();
+                        return 0;
+                    }
+                    return newValue;
+                });
+            } else {
+                // Reset excess scroll distance if not at the edge
+                setExcessScrollDistance(0);
             }
         };
 
@@ -132,7 +259,7 @@ export function ScrollProvider({ children }: { children: ReactNode }) {
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, [currentSection, isTransitioning]);
+    }, [currentSection, isTransitioning, excessScrollDistance]);
 
     // Helper functions for navigation
     const navigateToNextSection = () => {
