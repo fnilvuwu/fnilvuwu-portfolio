@@ -1,5 +1,3 @@
-import { NavBar } from '../components/nav-bar';
-
 const articles = [
     {
         title: "Hello world!",
@@ -14,7 +12,6 @@ const articles = [
 export default function ArticlesPage() {
     return (
         <main className="min-h-screen bg-white">
-            <NavBar />
             <article className="max-w-3xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
                 <header className="space-y-8 mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">

@@ -1,5 +1,3 @@
-import { NavBar } from "../components/nav-bar"
-
 const projects = [
   {
     title: "Blog with Users",
@@ -51,7 +49,6 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen bg-white">
-      <NavBar />
       <article className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
         <header className="space-y-8 mb-16">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">My Projects</h1>

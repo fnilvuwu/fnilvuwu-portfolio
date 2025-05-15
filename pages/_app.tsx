@@ -1,17 +1,11 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
-import { Footer } from '../components/footer'
+import { PageLayout } from '../components/PageLayout'
+import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter()
-
+export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <PageLayout>
       <Component {...pageProps} />
-      {router.pathname !== '/' && <Footer />}
-    </>
+    </PageLayout>
   )
 }
-
-export default MyApp

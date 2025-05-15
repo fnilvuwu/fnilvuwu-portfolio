@@ -1,5 +1,3 @@
-import { NavBar } from '../components/nav-bar';
-
 const certifications = [
     { title: 'Generative Adversarial Networks (GANs)', imageUrl: '/images/my_certificates/Generative Adversarial Networks (GANs).jpeg', link: 'https://www.coursera.org/account/accomplishments/specialization/GVKDBBB2OAUC' },
     { title: 'Red Hat Certified System Administrator (RHCSA)', imageUrl: '/images/my_certificates/Red Hat Certified System Administrator (RHCSA).png', link: 'https://www.credly.com/badges/68647f61-5159-44ac-ae53-b9de983931c4' },
@@ -42,16 +40,15 @@ const certifications = [
     { title: 'Belajar Dasar Pemrograman Web', imageUrl: '/images/my_certificates/Belajar Dasar Pemrograman Web.jpg', link: 'https://www.dicoding.com/certificates/98XWE486LXM3' },
     { title: 'Belajar Membuat Front-End Web untuk Pemula', imageUrl: '/images/my_certificates/Belajar Membuat Front-End Web untuk Pemula.jpg', link: 'https://www.dicoding.com/certificates/53XEDJ6YVPRN' },
     { title: 'Belajar Membuat Aplikasi Web dengan React', imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Web dengan React.jpg', link: 'https://www.dicoding.com/certificates/GRX5397JVZ0M' },
-   
+
     { title: 'Belajar Dasar Pemrograman JavaScript', imageUrl: '/images/my_certificates/Belajar Dasar Pemrograman JavaScript.jpg', link: 'https://www.dicoding.com/certificates/81P2L3QDQZOY' },
 
     // Add more certifications as needed
 ];
 
-export default function AboutPage() {
+export default function CertificatesPage() {
     return (
         <main className="min-h-screen bg-white">
-            <NavBar />
             <article className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
                 <header className="space-y-8 mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">

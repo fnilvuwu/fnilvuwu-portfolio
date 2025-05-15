@@ -1,12 +1,10 @@
 import { faLinux, faPython } from '@fortawesome/free-brands-svg-icons';
 import { faChartLine, faCloud, faCode, faDatabase, faEye, faImage, faMicrochip, faNetworkWired, faRobot, faSpider, faUserTie, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { NavBar } from '../components/nav-bar';
 
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-white">
-            <NavBar />
             <article className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
                 {/* Services Section */}
                 <section className="mb-16">
