@@ -6,7 +6,7 @@ const certifications = [
     { title: 'TensorFlow Developer Certificate', imageUrl: '/images/my_certificates/TensorFlow Developer Certificate.jpg', link: 'https://www.credential.net/a1fd9a03-8638-410d-b47b-b91ca5608a0a#acc.tqsjgKON' },
     { title: 'Bangkit Machine Learning Graduate with Distinction', imageUrl: '/images/my_certificates/Bangkit Machine Learning Graduate with Distinction.jpeg', link: 'https://github.com/GymGuide' },
     {
-        title: 'PKM- PI Pendanaan 2023 - Efisiensi Irigasi Otomatis Menggunakan Teknologi Sprinkler Berbasis Internet of Things IoT Sebagai Solusi Pengairan Lahan Pertanian Desa Bonto Lojong Bantaeng', imageUrl: '/images/my_certificates/PKM- PI Pendanaan 2023.jpeg', link: 'https://persuratan.kemdikbud.go.id/showpdf/tampilkandocument/363067'
+        title: 'PKM - PI Pendanaan 2023', imageUrl: '/images/my_certificates/PKM- PI Pendanaan 2023.jpeg', link: 'https://persuratan.kemdikbud.go.id/showpdf/tampilkandocument/363067'
     },
     { title: 'TensorFlow: Data and Deployment', imageUrl: '/images/my_certificates/TensorFlow Data and Deployment.jpeg', link: 'https://www.coursera.org/account/accomplishments/specialization/HTAMCE68FUX5' },
     { title: 'DeepLearning.AI TensorFlow Developer', imageUrl: '/images/my_certificates/DeepLearning.AI TensorFlow Developer.jpeg', link: 'https://www.coursera.org/account/accomplishments/specialization/RGUQWJZADZQW' },
@@ -72,10 +72,10 @@ export default function CertificatesPage() {
                                     <Image
                                         src={cert.imageUrl}
                                         alt={cert.title}
-                                        width={320}
-                                        height={192}
-                                        className="h-48 w-auto object-contain"
+                                        width={0}
+                                        height={0}
                                         sizes="(max-width: 768px) 100vw, 320px"
+                                        style={{ width: 'auto', height: '192px' }}
                                     />
                                     <h3 className="text-lg font-medium mt-4">{cert.title}</h3>
                                 </a>

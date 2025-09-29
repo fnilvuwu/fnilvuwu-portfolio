@@ -90,22 +90,27 @@ export default function ExperiencePage() {
                         {experiences.map((exp, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8"
+                                className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-8"
                             >
-                                <Image
-                                    src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
-                                    alt={exp.title}
-                                    width={192}
-                                    height={192}
-                                    className="h-48 w-auto object-contain"
-                                    sizes="(max-width: 768px) 100vw, 192px"
-                                />
-                                <div className="flex flex-col space-y-2 text-center md:text-left">
+                                <div className="flex-shrink-0 w-64 h-32 mx-auto sm:mx-0">
+                                    <div className="w-full h-full relative">
+                                        <Image
+                                            src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
+                                            alt={exp.title}
+                                            width={0}
+                                            height={0}
+                                            className="absolute top-0 left-0 w-full h-full object-cover object-top"
+                                            sizes="(max-width: 768px) 100vw, 320px"
+                                            style={{ width: '256', height: 'auto' }}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex flex-col space-y-2 flex-grow text-center sm:text-left">
                                     <a
                                         href={exp.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-xl font-bold text-center md:text-left text-blue-600 hover:underline"
+                                        className="text-xl font-bold text-blue-600 hover:underline"
                                     >
                                         {exp.title}
                                     </a>

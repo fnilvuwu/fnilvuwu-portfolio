@@ -20,8 +20,9 @@ export default function AboutPage() {
                                 height={160}
                                 className="w-full h-full object-cover"
                                 sizes="(max-width: 768px) 100vw, 160px"
+                                priority
+                                style={{ width: '100%', height: 'auto' }}
                             />
-                            import Image from 'next/image';
                         </div>
                     </div>
 

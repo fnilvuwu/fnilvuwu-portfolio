@@ -78,10 +78,11 @@ export default function ProjectsPage() {
                     <Image
                       src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
                       alt={project.title}
-                      width={256}
-                      height={128}
+                      width={0}
+                      height={0}
                       className="absolute top-0 left-0 w-full h-full object-cover object-top"
-                      sizes="(max-width: 768px) 100vw, 256px"
+                      sizes="(max-width: 768px) 100vw, 320px"
+                      style={{ width: '256', height: 'auto' }}
                     />
                   </div>
                 </a>
