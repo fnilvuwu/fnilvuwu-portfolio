@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const articles = [
     {
         title: "Hello world!",
@@ -29,7 +30,14 @@ export default function ArticlesPage() {
                     <div className="space-y-8">
                         {articles.map((article, index) => (
                             <div key={index} className="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8">
-                                <img src={article.imageUrl} alt={article.title} className="h-48 w-48 object-contain" />
+                                <Image
+                                    src={article.imageUrl.startsWith('/') ? article.imageUrl : '/' + article.imageUrl}
+                                    alt={article.title}
+                                    width={192}
+                                    height={192}
+                                    className="h-48 w-48 object-contain"
+                                    sizes="(max-width: 768px) 100vw, 192px"
+                                />
                                 <div className="flex flex-col space-y-2">
                                     <h3 className="text-2xl font-bold">{article.title}</h3>
                                     <p className="text-lg italic">{article.subtitle}</p>

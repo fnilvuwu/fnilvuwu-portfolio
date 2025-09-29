@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const experiences = [
     {
         title: "ML Engineer Division",
@@ -91,7 +92,14 @@ export default function ExperiencePage() {
                                 key={index}
                                 className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-8"
                             >
-                                <img src={exp.imageUrl || "/placeholder.svg"} alt={exp.title} className="h-48 w-auto object-contain" />
+                                <Image
+                                    src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
+                                    alt={exp.title}
+                                    width={192}
+                                    height={192}
+                                    className="h-48 w-auto object-contain"
+                                    sizes="(max-width: 768px) 100vw, 192px"
+                                />
                                 <div className="flex flex-col space-y-2 text-center md:text-left">
                                     <a
                                         href={exp.link}

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const certifications = [
     { title: 'Generative Adversarial Networks (GANs)', imageUrl: '/images/my_certificates/Generative Adversarial Networks (GANs).jpeg', link: 'https://www.coursera.org/account/accomplishments/specialization/GVKDBBB2OAUC' },
     { title: 'Red Hat Certified System Administrator (RHCSA)', imageUrl: '/images/my_certificates/Red Hat Certified System Administrator (RHCSA).png', link: 'https://www.credly.com/badges/68647f61-5159-44ac-ae53-b9de983931c4' },
@@ -67,7 +68,15 @@ export default function CertificatesPage() {
                         {certifications.map((cert, index) => (
                             <div key={index} className="flex flex-col items-center space-y-4 text-center">
                                 <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-                                    <img src={cert.imageUrl} alt={cert.title} className="h-48 w-auto object-contain" />
+                                    {/* Use Next.js Image for optimized, lazy-loaded images */}
+                                    <Image
+                                        src={cert.imageUrl}
+                                        alt={cert.title}
+                                        width={320}
+                                        height={192}
+                                        className="h-48 w-auto object-contain"
+                                        sizes="(max-width: 768px) 100vw, 320px"
+                                    />
                                     <h3 className="text-lg font-medium mt-4">{cert.title}</h3>
                                 </a>
                             </div>

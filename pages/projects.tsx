@@ -1,3 +1,4 @@
+import Image from 'next/image';
 const projects = [
   {
     title: "Blog with Users",
@@ -74,10 +75,13 @@ export default function ProjectsPage() {
                   className="flex-shrink-0 w-64 h-32 mx-auto sm:mx-0"
                 >
                   <div className="w-full h-full relative">
-                    <img
-                      src={project.imageUrl || "/placeholder.svg"}
+                    <Image
+                      src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
                       alt={project.title}
+                      width={256}
+                      height={128}
                       className="absolute top-0 left-0 w-full h-full object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 256px"
                     />
                   </div>
                 </a>

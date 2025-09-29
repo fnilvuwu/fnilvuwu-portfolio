@@ -1,3 +1,4 @@
+import Image from 'next/image';
 export default function AboutPage() {
     // put hobby, and contact here instead
     return (
@@ -12,11 +13,15 @@ export default function AboutPage() {
                 <section className="mb-8">
                     <div className="flex flex-col items-center p-4 space-y-4 mb-4">
                         <div className="w-40 h-40 rounded-full overflow-hidden">
-                            <img
+                            <Image
                                 src="/images/me.png"
                                 alt="Rahmatullah R."
+                                width={160}
+                                height={160}
                                 className="w-full h-full object-cover"
+                                sizes="(max-width: 768px) 100vw, 160px"
                             />
+                            import Image from 'next/image';
                         </div>
                     </div>
 

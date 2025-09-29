@@ -1,6 +1,7 @@
 import { faLinux, faPython } from '@fortawesome/free-brands-svg-icons';
 import { faChartLine, faCloud, faCode, faDatabase, faEye, faImage, faMicrochip, faNetworkWired, faRobot, faSpider, faUserTie, faVideo } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
 export default function AboutPage() {
     return (
@@ -127,11 +128,14 @@ export default function AboutPage() {
                             '/images/my_tech_stacks/wordpress-logo.png',
                             '/images/my_tech_stacks/bash-logo.svg',
                         ].map((src, index) => (
-                            <img
+                            <Image
                                 key={index}
                                 src={src}
                                 alt="Tech Stack Icon"
+                                width={64}
+                                height={64}
                                 className="h-16 w-16 object-contain transform transition-transform hover:scale-110"
+                                sizes="(max-width: 768px) 100vw, 64px"
                             />
                         ))}
                     </div>
