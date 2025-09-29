@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 interface TypewriterProps {
-  text: string
+  text: string;
+  onCycleComplete?: () => void;
 }
 
-export function Typewriter({ text }: TypewriterProps) {
+export function Typewriter({ text, onCycleComplete }: TypewriterProps) {
   const [displayedText, setDisplayedText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(150)
@@ -19,12 +20,13 @@ export function Typewriter({ text }: TypewriterProps) {
           : fullText.substring(0, displayedText.length + 1)
       )
 
-      setTypingSpeed(isDeleting ? 30 : 150)
+      setTypingSpeed(isDeleting ? 30 : 120)
 
       if (!isDeleting && displayedText === fullText) {
-        setTimeout(() => setIsDeleting(true), 4000) // Increase idle duration here
+        setTimeout(() => setIsDeleting(true), 4000)
       } else if (isDeleting && displayedText === '') {
         setIsDeleting(false)
+        if (onCycleComplete) onCycleComplete();
       }
     }
 

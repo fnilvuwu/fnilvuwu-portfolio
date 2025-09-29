@@ -49,7 +49,7 @@ export default function AboutPage() {
                             WHAT I BRING TO THE TABLE
                         </div>
                     </header>
-                    <div className="flex flex-wrap justify-center gap-6 mt-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8">
                         {[
                             { title: 'Python Programming', icon: faPython },
                             { title: 'Machine Learning', icon: faRobot },
