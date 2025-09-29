@@ -90,20 +90,16 @@ export default function ExperiencePage() {
                         {experiences.map((exp, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-8"
+                                className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8"
                             >
-                                <div className="flex-shrink-0 w-64 h-32 mx-auto sm:mx-0">
-                                    <div className="w-full h-full relative">
-                                        <Image
-                                            src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
-                                            alt={exp.title}
-                                            width={0}
-                                            height={0}
-                                            className="absolute top-0 left-0 w-full h-full object-cover object-top"
-                                            sizes="(max-width: 768px) 100vw, 320px"
-                                            style={{ width: '256', height: 'auto' }}
-                                        />
-                                    </div>
+                                <div className="w-full h-48 sm:w-96 sm:h-56 mb-4 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative bg-white">
+                                    <Image
+                                        src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
+                                        alt={exp.title}
+                                        fill
+                                        className="object-contain object-center rounded-lg"
+                                        sizes="(max-width: 768px) 100vw, 320px"
+                                    />
                                 </div>
                                 <div className="flex flex-col space-y-2 flex-grow text-center sm:text-left">
                                     <a

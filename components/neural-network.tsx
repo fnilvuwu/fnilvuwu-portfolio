@@ -36,7 +36,7 @@ export function NeuralNetwork() {
       const margin = 40 // Increased margin for better spacing
       const width = Math.min(window.innerWidth - margin * 2, 1200) // Max width cap
       const height = Math.min(600, window.innerHeight - margin * 2) // Max height cap
-      
+
       // Set canvas size with device pixel ratio
       const scale = window.devicePixelRatio || 1
       canvas.width = width * scale
@@ -73,7 +73,7 @@ export function NeuralNetwork() {
     setCanvasSize()
     window.addEventListener('resize', setCanvasSize)
 
-    const letters = ['D', 'S', 'A', 'I']
+    // Removed DSAI letters
     let particles: {
       x: number
       y: number
@@ -109,37 +109,13 @@ export function NeuralNetwork() {
         }
       })
 
-      // Draw neurons with improved styling
-      layers.forEach((layer, layerIndex) => {
-        layer.neurons.forEach((neuron, neuronIndex) => {
+      // Draw neurons with improved styling (no letters)
+      layers.forEach((layer) => {
+        layer.neurons.forEach((neuron) => {
           ctx.beginPath()
           ctx.arc(neuron.x, neuron.y, 3, 0, Math.PI * 2)
           ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'
           ctx.fill()
-
-          // Draw letters with improved positioning and zoom effect
-          if (layerIndex === layers.length - 1) {
-            const letter = letters[neuronIndex]
-            const isActive = activeLetter === letter
-            const fontSize = isActive ? 28 : 20
-            const fontWeight = isActive ? 'bold' : 'normal'
-            ctx.font = `${fontWeight} ${fontSize}px Inter, sans-serif`
-            ctx.fillStyle = isActive ? 'rgba(0, 0, 255, 0.9)' : 'rgba(0, 0, 0, 0.7)'
-            ctx.textAlign = 'left'
-            ctx.textBaseline = 'middle'
-            
-            // Add a glow effect for active letters
-            if (isActive) {
-              ctx.shadowColor = 'rgba(0, 0, 255, 0.5)'
-              ctx.shadowBlur = 10
-            }
-            
-            ctx.fillText(letter, neuron.x + 12, neuron.y)
-            
-            // Reset shadow
-            ctx.shadowColor = 'transparent'
-            ctx.shadowBlur = 0
-          }
         })
       })
 
@@ -186,10 +162,7 @@ export function NeuralNetwork() {
         ctx.fill()
 
         // Trigger letter animation when particle reaches end
-        if (particle.layerIndex === layers.length - 2 && t >= 0.95) {
-          setActiveLetter(letters[particle.targetIndex])
-          setTimeout(() => setActiveLetter(null), 400)
-        }
+        // Removed letter animation trigger
 
         return t < 1
       })

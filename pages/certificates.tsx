@@ -66,17 +66,17 @@ export default function CertificatesPage() {
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         {certifications.map((cert, index) => (
-                            <div key={index} className="flex flex-col items-center space-y-4 text-center">
-                                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center">
-                                    {/* Use Next.js Image for optimized, lazy-loaded images */}
-                                    <Image
-                                        src={cert.imageUrl}
-                                        alt={cert.title}
-                                        width={0}
-                                        height={0}
-                                        sizes="(max-width: 768px) 100vw, 320px"
-                                        style={{ width: 'auto', height: '192px' }}
-                                    />
+                            <div key={index} className="flex flex-col items-center text-center">
+                                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center w-full">
+                                    <div className="w-full h-48 sm:w-96 sm:h-56 mb-4 sm:mb-0 relative bg-white">
+                                        <Image
+                                            src={cert.imageUrl}
+                                            alt={cert.title}
+                                            fill
+                                            className="object-contain object-center rounded-lg"
+                                            sizes="(max-width: 768px) 100vw, 320px"
+                                        />
+                                    </div>
                                     <h3 className="text-lg font-medium mt-4">{cert.title}</h3>
                                 </a>
                             </div>
