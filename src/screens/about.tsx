@@ -3,7 +3,7 @@ export default function AboutPage() {
     // put hobby, and contact here instead
     return (
         <main className="min-h-screen bg-white flex flex-col">
-            <article className="max-w-3xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
+            <article className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
                 <header className="space-y-8 mb-4">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
                         About Me

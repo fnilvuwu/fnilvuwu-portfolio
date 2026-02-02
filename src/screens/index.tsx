@@ -12,14 +12,14 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-white flex flex-col w-full relative overflow-hidden">
             <div className="flex-grow relative px-4 flex flex-col items-center justify-center">
-                <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-center text-sm font-medium text-black/70 z-20">
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center text-sm font-medium text-black/70 z-20">
                     {/* Alternate between two typewriter texts */}
                     <Typewriter
                         text={messages[currentIdx]}
                         onCycleComplete={() => setCurrentIdx((idx: number) => (idx + 1) % messages.length)}
                     />
                 </div>
-                <div className="flex flex-col items-center w-full z-10">
+                <div className="flex flex-col items-center max-w-6xl z-10">
                     <NeuralNetwork />
                 </div>
             </div>

@@ -17,6 +17,16 @@ export function NavBar() {
         e.preventDefault()
         setIsMenuOpen(false)
         setIsDropdownOpen(false)
+
+        // Find the target section by id
+        const targetSection = document.getElementById(id)
+        if (targetSection) {
+            // Smooth scroll to the section
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+        }
     }
 
     const getLinkClass = (id: string) => {

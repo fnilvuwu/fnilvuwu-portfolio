@@ -55,11 +55,12 @@ export default function ContactPage() {
                             {/* Map */}
                             <section className="md:w-1/2">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.620194937768!2d119.4955633147744!3d-5.138967153073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbf1c0a6b1b1e1d%3A0x3030bfbcaf770b0!2sHasanuddin%20University!5e0!3m2!1sen!2sid!4v1633021234567!5m2!1sen!2sid"
                                     width="100%"
                                     height="450"
                                     style={{ border: 0 }}
                                     loading="lazy"
+                                    allowFullScreen
+                                    src="https://www.google.com/maps?q=Hasanuddin+University&z=18&output=embed"
                                 ></iframe>
                             </section>
                         </div>
