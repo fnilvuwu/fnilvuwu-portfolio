@@ -100,18 +100,18 @@ export function NavBar() {
             </div>
 
             {isMenuOpen && (
-                <div className="navbar-mobile md:hidden bg-white absolute top-full left-0 right-0 p-4 shadow-md border-t">
-                    <a href="#home" className="block py-2 text-sm font-medium text-gray-700" onClick={(e) => handleNavClick(e, 'home')}>HOME</a>
-                    <a href="#about" className="block py-2 text-sm font-medium text-gray-700" onClick={(e) => handleNavClick(e, 'about')}>ABOUT</a>
-                    <a href="#services" className="block py-2 text-sm font-medium text-gray-700" onClick={(e) => handleNavClick(e, 'services')}>SERVICES</a>
-                    <div className="py-2">
-                        <span className="block text-sm font-medium text-gray-900 mb-1">PORTFOLIO</span>
-                        <a href="#certificates" className="block pl-4 py-1 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'certificates')}>CERTIFICATES</a>
-                        <a href="#experience" className="block pl-4 py-1 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'experience')}>EXPERIENCE</a>
-                        <a href="#projects" className="block pl-4 py-1 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'projects')}>PROJECTS</a>
+                <div className="navbar-mobile md:hidden bg-white absolute top-full left-0 right-0 p-4 shadow-md">
+                    <a href="#home" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'home')}>HOME</a>
+                    <a href="#about" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'about')}>ABOUT</a>
+                    <a href="#services" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'services')}>SERVICES</a>
+                    <div className="text-center">
+                        <span className="block py-2 text-sm font-medium text-gray-900">PORTFOLIO</span>
+                        <a href="#certificates" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'certificates')}>CERTIFICATES</a>
+                        <a href="#experience" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'experience')}>EXPERIENCE</a>
+                        <a href="#projects" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'projects')}>PROJECTS</a>
                     </div>
-                    <a href="#articles" className="block py-2 text-sm font-medium text-gray-700" onClick={(e) => handleNavClick(e, 'articles')}>ARTICLES</a>
-                    <a href="#contact" className="block py-2 text-sm font-medium text-gray-700" onClick={(e) => handleNavClick(e, 'contact')}>CONTACT</a>
+                    <a href="#articles" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'articles')}>ARTICLES</a>
+                    <a href="#contact" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'contact')}>CONTACT</a>
                 </div>
             )}
 
