@@ -75,7 +75,7 @@ export function Footer() {
 
                 {/* Bottom bar */}
                 <div className="mt-8 pt-8 border-t border-gray-200">
-                    <p className="text-center text-sm text-muted-foreground">
+                    <p className="text-center text-gray-600 text-sm">
                         © {new Date().getFullYear()} Fnilvuwu, All rights reserved.
                     </p>
                 </div>

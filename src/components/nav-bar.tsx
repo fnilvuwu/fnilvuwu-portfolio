@@ -101,7 +101,7 @@ export function NavBar() {
 
                 <div className="md:hidden flex items-center">
                     <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
-                        {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                        {isMenuOpen ? <X className="h-6 w-6" color='#FF5C00'/> : <Menu className="h-6 w-6" color='#FF5C00' />}
                     </button>
                 </div>
             </div>
