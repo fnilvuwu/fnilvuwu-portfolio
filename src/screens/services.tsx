@@ -95,15 +95,15 @@ export default function ServicesPage() {
 
     return (
         <main className="min-h-screen bg-white">
-            <article className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
+            <article className="max-w-6xl mx-auto px-4 py-8 md:py-8 flex-grow fade-in">
                 {/* Services Section */}
                 <section className="mb-16">
                     <header className="space-y-8 mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
                             Services
                         </h1>
-                        <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
-                            SERVICES THAT I OFFER
+                        <div className="text-center uppercase tracking-[0.2em] text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
+                            [ SERVICES THAT I OFFER ]
                         </div>
                     </header>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-8">
@@ -115,9 +115,9 @@ export default function ServicesPage() {
                                 title={`Show related items for ${service.name}`}
                             >
                                 <div className="h-16 w-16 flex items-center justify-center">
-                                    {service.icon && <FontAwesomeIcon icon={service.icon} size="3x" />}
+                                    {service.icon && <FontAwesomeIcon icon={service.icon} size="3x" style={{ color: '#FF5C00' }} />}
                                 </div>
-                                <h3 className="text-lg font-medium">{service.name}</h3>
+                                <h3 className="text-sm text-gray-600 font-semibold mb-1">{service.name}</h3>
                             </div>
                         ))}
                     </div>
@@ -129,8 +129,8 @@ export default function ServicesPage() {
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
                             Skills
                         </h1>
-                        <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
-                            WHAT I BRING TO THE TABLE
+                        <div className="text-center uppercase tracking-[0.2em] text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
+                            [ WHAT I BRING TO THE TABLE ]
                         </div>
                     </header>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8">
@@ -142,9 +142,9 @@ export default function ServicesPage() {
                                 title={`Show related items for ${skill.name}`}
                             >
                                 <div className="h-16 w-16 flex items-center justify-center">
-                                    {skill.icon && <FontAwesomeIcon icon={skill.icon} size="3x" />}
+                                    {skill.icon && <FontAwesomeIcon icon={skill.icon} size="3x" style={{ color: '#FF5C00' }} />}
                                 </div>
-                                <h3 className="text-lg font-medium">{skill.name}</h3>
+                                <h3 className="text-sm text-gray-600 font-semibold mb-1">{skill.name}</h3>
                             </div>
                         ))}
                     </div>
@@ -156,8 +156,8 @@ export default function ServicesPage() {
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
                             Tech Stacks
                         </h1>
-                        <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
-                            TECHNOLOGY THAT I USE
+                        <div className="text-center uppercase tracking-[0.2em] text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
+                            [ TECHNOLOGY THAT I USE ]
                         </div>
                     </header>
                     <div className="flex flex-wrap justify-center gap-6 mt-8">

@@ -6,13 +6,13 @@ export default function ContactPage() {
         <>
 
             <main className="min-h-screen bg-white">
-                <article className="max-w-5xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
+                <article className="max-w-5xl mx-auto px-4 py-8 md:py-8 flex-grow fade-in">
                     <header className="space-y-8 mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
                             Get in Touch
                         </h1>
-                        <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
-                            Let's Build Something Great Together
+                        <div className="text-center uppercase tracking-[0.2em] text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
+                            [ Let's Build Something Great Together ]
                         </div>
                         <p className="text-center text-muted-foreground">
                             Interested in collaborating or hiring me for your project? Drop me a message—I'd love to hear from you!
@@ -34,16 +34,16 @@ export default function ContactPage() {
                                     <div className="flex items-center space-x-4">
                                         <MapPinIcon className="h-6 w-6 text-gray-600" />
                                         <div>
-                                            <p className="font-medium">Location</p>
-                                            <p className="text-muted-foreground">Makassar, Indonesia</p>
+                                            <p className="font-medium" style={{ color: '#FF5C00' }}>Location</p>
+                                            <p className="text-muted-foreground" >Makassar, Indonesia</p>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center space-x-4">
                                         <EnvelopeIcon className="h-6 w-6 text-gray-600" />
                                         <div>
-                                            <p className="font-medium">Email</p>
-                                            <a href="mailto:mamatmks45@gmail.com" className="text-blue-600 hover:text-blue-800">
+                                            <p className="font-medium" style={{ color: '#FF5C00' }}>Email</p>
+                                            <a href="mailto:mamatmks45@gmail.com" className="text-[#000000] hover:text-[#000000]">
                                                 mamatmks45@gmail.com
                                             </a>
                                         </div>

@@ -3,16 +3,16 @@ export default function AboutPage() {
     // put hobby, and contact here instead
     return (
         <main className="min-h-screen bg-white flex flex-col">
-            <article className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
-                <header className="space-y-8 mb-4">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
+            <article className="max-w-6xl mx-auto px-6 py-12 md:py-16 flex-grow fade-in">
+                <header className="space-y-6 mb-12">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center" style={{ color: 'hsl(var(--foreground))' }}>
                         About Me
                     </h1>
                 </header>
 
-                <section className="mb-8">
-                    <div className="flex flex-col items-center p-4 space-y-4 mb-4">
-                        <div className="w-40 h-40 rounded-full overflow-hidden">
+                <section className="mb-12">
+                    <div className="flex flex-col items-center p-4 space-y-6 mb-8">
+                        <div className="w-40 h-40 rounded-full overflow-hidden" style={{ border: '2px solid #FF5C00' }}>
                             <img
                                 src="/images/me.png"
                                 alt="Rahmatullah R."
@@ -24,13 +24,13 @@ export default function AboutPage() {
                         </div>
                     </div>
 
-                    <div className="text-center uppercase tracking-wider text-sm text-muted-foreground mb-8">
-                        Introduction
+                    <div className="text-center uppercase tracking-[0.2em] text-xs mb-12" style={{ color: 'hsl(var(--muted-foreground))' }}>
+                        [ Introduction ]
                     </div>
 
-                    <div className="space-y-8">
+                    <div className="space-y-6" style={{ color: 'hsl(var(--foreground))' }}>
                         <p className="leading-relaxed">
-                            Hi, I'm <strong>Rahmatullah R.</strong>, also known as <em>Fnilvuwu</em>, a versatile AI engineer, fullstack developer, video editor, and PowerPoint designer with over 5 years of experience. I specialize in a wide range of services, including cutting-edge machine learning solutions, professional video editing, motion graphics, and sleek PowerPoint presentations.
+                            Hi, I'm <strong style={{ color: '#FF5C00' }}>Rahmatullah R.</strong>, also known as <em style={{ color: '#FF5C00' }}>Fnilvuwu</em>, a versatile AI engineer, fullstack developer, video editor, and PowerPoint designer with over 5 years of experience. I specialize in a wide range of services, including cutting-edge machine learning solutions, professional video editing, motion graphics, and sleek PowerPoint presentations.
                         </p>
                         <p className="leading-relaxed">
                             Whether you're looking to optimize your business with AI, enhance your content with top-tier visuals, or build robust software solutions, I am here to help. My goal is to bring your ideas to life with creativity, precision, and dedication.

@@ -344,7 +344,7 @@ export default function CertificatesPage() {
 
     return (
         <main className="min-h-screen bg-white">
-            <article className="max-w-6xl mx-auto px-4 py-16 md:py-24 flex-grow fade-in">
+            <article className="max-w-6xl mx-auto px-4 py-8 md:py-8 flex-grow fade-in">
                 <header className="space-y-8 mb-16">
                     <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
                         Certificates
@@ -356,7 +356,14 @@ export default function CertificatesPage() {
                 {/* Filter by tag type */}
                 <div className="flex flex-wrap gap-2 justify-center mb-4">
                     <button
-                        className={`px-3 py-1 rounded border text-xs font-medium ${selectedTagType === 'All' ? 'bg-blue-600 text-white border-blue-700' : 'bg-gray-100 text-gray-700 border-gray-300'}`}
+                        className="px-3 py-1 text-xs tracking-wide"
+                        style={{
+                            backgroundColor: selectedTagType === 'All' ? '#FF5C00' : 'transparent',
+                            color: selectedTagType === 'All' ? '#ffffff' : 'hsl(var(--foreground))',
+                            border: selectedTagType === 'All' ? '1px solid #FF5C00' : '1px solid hsl(var(--border))',
+                            borderRadius: '2px',
+                            cursor: 'pointer'
+                        }}
                         onClick={() => setSelectedTagType('All')}
                     >
                         All Types
@@ -364,7 +371,14 @@ export default function CertificatesPage() {
                     {['service', 'skill', 'tech'].map((type) => (
                         <button
                             key={type}
-                            className={`px-3 py-1 rounded border text-xs font-medium ${selectedTagType === type ? 'bg-blue-600 text-white border-blue-700' : 'bg-gray-100 text-gray-700 border-gray-300'}`}
+                            className="px-3 py-1 text-xs tracking-wide"
+                            style={{
+                                backgroundColor: selectedTagType === type ? '#FF5C00' : 'transparent',
+                                color: selectedTagType === type ? '#ffffff' : 'hsl(var(--foreground))',
+                                border: selectedTagType === type ? '1px solid #FF5C00' : '1px solid hsl(var(--border))',
+                                borderRadius: '2px',
+                                cursor: 'pointer'
+                            }}
                             onClick={() => setSelectedTagType(type as Tag['type'])}
                         >
                             {type.charAt(0).toUpperCase() + type.slice(1)}
@@ -374,7 +388,14 @@ export default function CertificatesPage() {
                 {/* Filter by tag name */}
                 <div className="flex flex-wrap gap-2 justify-center mb-8">
                     <button
-                        className={`px-3 py-1 rounded border text-xs font-medium ${selectedTag === 'All' ? 'bg-green-600 text-white border-green-700' : 'bg-gray-100 text-gray-700 border-gray-300'}`}
+                        className="px-3 py-1 text-xs tracking-wide"
+                        style={{
+                            backgroundColor: selectedTag === 'All' ? '#7c3aed' : 'transparent',
+                            color: selectedTag === 'All' ? '#ffffff' : 'hsl(var(--foreground))',
+                            border: selectedTag === 'All' ? '1px solid #7c3aed' : '1px solid hsl(var(--border))',
+                            borderRadius: '2px',
+                            cursor: 'pointer'
+                        }}
                         onClick={() => setSelectedTag('All')}
                     >
                         All Tags
@@ -382,7 +403,14 @@ export default function CertificatesPage() {
                     {tags.filter(t => selectedTagType === 'All' || t.type === selectedTagType).map((tag) => (
                         <button
                             key={tag.name}
-                            className={`px-3 py-1 rounded border text-xs font-medium ${selectedTag === tag.name ? 'bg-green-600 text-white border-green-700' : 'bg-gray-100 text-gray-700 border-gray-300'}`}
+                            className="px-3 py-1 text-xs tracking-wide"
+                            style={{
+                                backgroundColor: selectedTag === tag.name ? '#7c3aed' : 'transparent',
+                                color: selectedTag === tag.name ? '#ffffff' : 'hsl(var(--foreground))',
+                                border: selectedTag === tag.name ? '1px solid #7c3aed' : '1px solid hsl(var(--border))',
+                                borderRadius: '2px',
+                                cursor: 'pointer'
+                            }}
                             onClick={() => setSelectedTag(tag.name)}
                         >
                             {tag.name}
@@ -405,11 +433,17 @@ export default function CertificatesPage() {
                                         />
                                     </div>
                                     <h3 className="text-lg font-medium mt-4">{cert.title}</h3>
-                                    <div className="flex flex-wrap gap-1 mt-2">
+                                    <div className="flex flex-wrap gap-2 mt-2">
                                         {cert.tags.map((tag, i) => (
                                             <span
                                                 key={i}
-                                                className={`px-2 py-1 rounded text-xs font-medium border ${tag.type === 'service' ? 'bg-blue-100 text-blue-700 border-blue-300' : tag.type === 'skill' ? 'bg-purple-100 text-purple-700 border-purple-300' : 'bg-gray-100 text-gray-700 border-gray-300'}`}
+                                                className="px-3 py-1 text-xs tracking-wide"
+                                                style={{
+                                                    backgroundColor: tag.type === 'service' ? 'rgba(255, 92, 0, 0.15)' : tag.type === 'skill' ? 'rgba(124, 58, 237, 0.25)' : 'rgba(156, 163, 175, 0.2)',
+                                                    color: tag.type === 'service' ? '#FF5C00' : tag.type === 'skill' ? '#7c3aed' : 'hsl(var(--muted-foreground))',
+                                                    border: `1px solid ${tag.type === 'service' ? '#FF5C00' : tag.type === 'skill' ? '#7c3aed' : 'hsl(var(--border))'}`,
+                                                    borderRadius: '2px'
+                                                }}
                                             >
                                                 {tag.name}
                                             </span>

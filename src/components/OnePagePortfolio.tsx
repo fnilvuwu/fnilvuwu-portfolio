@@ -1,10 +1,11 @@
 import About from '../screens/about';
-import Articles from '../screens/articles';
-import Certificates from '../screens/certificates';
 import Contact from '../screens/contact';
 import Experience from '../screens/experience';
+import HomeArticles from '../screens/HomeArticles';
+import HomeAwards from '../screens/HomeAwards';
+import HomeCertifications from '../screens/HomeCertifications';
+import HomeProjects from '../screens/HomeProjects';
 import Home from '../screens/index';
-import Projects from '../screens/projects';
 import Services from '../screens/services';
 
 export function OnePagePortfolio() {
@@ -22,20 +23,24 @@ export function OnePagePortfolio() {
                 <Services />
             </section>
 
-            <section id="certificates" className="min-h-screen">
-                <Certificates />
-            </section>
-
             <section id="experience" className="min-h-screen">
                 <Experience />
             </section>
 
+            <section id="awards" className="min-h-screen">
+                <HomeAwards />
+            </section>
+
+            <section id="certificates" className="min-h-screen">
+                <HomeCertifications />
+            </section>
+
             <section id="projects" className="min-h-screen">
-                <Projects />
+                <HomeProjects />
             </section>
 
             <section id="articles" className="min-h-screen">
-                <Articles />
+                <HomeArticles />
             </section>
 
             <section id="contact" className="min-h-screen">

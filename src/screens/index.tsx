@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <div className="min-h-screen bg-white flex flex-col w-full relative overflow-hidden">
             <div className="flex-grow relative px-4 flex flex-col items-center justify-center">
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center text-sm font-medium text-black/70 z-20">
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center text-sm font-medium text-[#ff5C00] z-20">
                     {/* Alternate between two typewriter texts */}
                     <Typewriter
                         text={messages[currentIdx]}

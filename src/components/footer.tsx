@@ -9,60 +9,62 @@ export function Footer() {
                     {/* Left side - Institution info */}
                     <div className="w-full sm:w-1/2 text-center sm:text-left">
                         <h2 className="text-2xl font-bold text-foreground">Fnilvuwu's Portfolio</h2>
-                        <p className="mt-4 text-muted-foreground">Crafted with Passion</p>
+                        <p className="mt-4 uppercase tracking-[0.2em] text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
+                            [ Labor of Love ]
+                        </p>
                     </div>
 
                     {/* Right side - Quick links */}
                     <div className="w-full sm:w-1/2 flex flex-col items-center sm:items-end">
                         <div className="text-center sm:text-right">
-                            <h3 className="text-sm font-semibold uppercase tracking-wider mb-4 text-foreground">Connect</h3>
+                            <h3 className="text-sm uppercase font-medium tracking-wider mb-4 text-foreground" style={{color: '#FF5C00'}}>Connect</h3>
                             <div className="flex space-x-4 justify-center sm:justify-end">
                                 <a
                                     href="https://www.fiverr.com/fnilvuwu"
                                     aria-label="Fiverr"
-                                    className="text-muted-foreground hover:text-foreground transition"
+                                    className="text-muted-foreground hover:#FF5C00 transition"
                                 >
                                     <SiFiverr className="h-6 w-6" />
                                 </a>
                                 <a
                                     href="https://t.me/fnilvuwu"
                                     aria-label="Telegram"
-                                    className="text-muted-foreground hover:text-foreground transition"
+                                    className="text-muted-foreground hover:#FF5C00 transition"
                                 >
                                     <SiTelegram className="h-6 w-6" />
                                 </a>
                                 <a
                                     href="https://www.linkedin.com/in/fnilvuwu/"
                                     aria-label="LinkedIn"
-                                    className="text-muted-foreground hover:text-foreground transition"
+                                    className="text-muted-foreground hover:#FF5C00 transition"
                                 >
                                     <Linkedin className="h-6 w-6" />
                                 </a>
                                 <a
                                     href="https://www.instagram.com/fnilvuwu/"
                                     aria-label="Instagram"
-                                    className="text-muted-foreground hover:text-foreground transition"
+                                    className="text-muted-foreground hover:#FF5C00 transition"
                                 >
                                     <Instagram className="h-6 w-6" />
                                 </a>
                                 <a
                                     href="https://www.youtube.com/@fnilvuwu"
                                     aria-label="YouTube"
-                                    className="text-muted-foreground hover:text-foreground transition"
+                                    className="text-muted-foreground hover:#FF5C00 transition"
                                 >
                                     <Youtube className="h-6 w-6" />
                                 </a>
                                 <a
                                     href="https://x.com/fnilvu"
                                     aria-label="Twitter"
-                                    className="text-muted-foreground hover:text-foreground transition"
+                                    className="text-muted-foreground hover:#FF5C00 transition"
                                 >
                                     <Twitter className="h-6 w-6" />
                                 </a>
                                 <a
                                     href="https://web.facebook.com/fnilvuwu/"
                                     aria-label="Facebook"
-                                    className="text-muted-foreground hover:text-foreground transition"
+                                    className="text-muted-foreground hover:#FF5C00 transition"
                                 >
                                     <Facebook className="h-6 w-6" />
                                 </a>

@@ -1,109 +1,66 @@
-
 import { useState } from 'react';
 import type { Tag } from './services';
 import { tags } from './services';
 
-
-type TagType = 'service' | 'skill' | 'tech';
-
-// Example: use tags for each project
-const projects = [
+// Awards data structure - competition wins and achievements
+export const awards = [
     {
-        title: "Blog with Users",
-        description: "A blog application with user authentication and CRUD functionality.",
-        imageUrl: "images/my_projects/Blog with Users.png",
-        link: "https://github.com/fnilvuwu/Starting-Files---blog-with-users-start",
-        website: "https://starting-files-blog-with-users-start-fnilvuwus-projects.vercel.app/",
+        title: 'Bangkit 2023 Graduate with Distinction',
+        description: 'Successfully completed Bangkit Machine Learning path with Distinction. Bangkit is a Google-led academy designed to produce high-caliber technical talent.',
+        imageUrl: '/images/my_awards/bangkit-distinction.jpeg',
+        date: '2024',
+        link: 'https://github.com/GymGuide',
         tags: [
-            tags.find(t => t.name === 'Software Development'),
-            tags.find(t => t.name === 'Python'),
-            tags.find(t => t.name === 'Flask'),
-            tags.find(t => t.name === 'MySQL'),
-            tags.find(t => t.name === 'PostgreSQL'),
-            tags.find(t => t.name === 'Jupyter'),
-        ].filter(Boolean) as Tag[],
-    },
-    {
-        title: "Drum Kit Website",
-        description:
-            "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements. Each drum sound is triggered using JavaScript events, and the user interface is styled with CSS. The website is interactive and provides a fun way to play different percussion sounds.",
-        imageUrl: "images/my_projects/Drum Kit Website.png",
-        link: "https://github.com/fnilvuwu/drum-kit-website",
-        website: "https://fnilvuwu.github.io/drum-kit-website/",
-        tags: [
-            tags.find(t => t.name === 'Software Development'),
-            tags.find(t => t.name === 'JavaScript'),
-            tags.find(t => t.name === 'HTML'),
-            tags.find(t => t.name === 'CSS'),
-        ].filter(Boolean) as Tag[],
-    },
-    {
-        title: "Bootstrap Tincat Website",
-        description:
-            "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements. Each drum sound is triggered using JavaScript events, and the user interface is styled with CSS. The website is interactive and provides a fun way to play different percussion sounds.",
-        imageUrl: "images/my_projects/Bootstrap Tincat Website.png",
-        link: "https://github.com/fnilvuwu/tincat-bootstrap",
-        website: "https://fnilvuwu.github.io/tincat-bootstrap/",
-        tags: [
-            tags.find(t => t.name === 'Software Development'),
-            tags.find(t => t.name === 'Bootstrap'),
-            tags.find(t => t.name === 'HTML'),
-            tags.find(t => t.name === 'CSS'),
-        ].filter(Boolean) as Tag[],
-    },
-    {
-        title: "Emotion Detection Website (TFLite on the web)",
-        description:
-            "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements. Each drum sound is triggered using JavaScript events, and the user interface is styled with CSS. The website is interactive and provides a fun way to play different percussion sounds.",
-        imageUrl: "images/my_projects/Emotion Detection Website (TFLite on the web).png",
-        link: "https://github.com/fnilvuwu/Facial-Emotion-Detection-System",
-        website: "https://fnilvuwu.github.io/Facial-Emotion-Detection-System/",
-        tags: [
+            tags.find(t => t.name === 'Machine Learning'),
             tags.find(t => t.name === 'Artificial Intelligence'),
-            tags.find(t => t.name === 'TensorFlow'),
-            tags.find(t => t.name === 'HTML'),
-            tags.find(t => t.name === 'CSS'),
+            tags.find(t => t.name === 'Google Cloud'),
         ].filter(Boolean) as Tag[],
     },
     {
-        title: "Facial Age Estimation Website",
-        description:
-            "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements. Each drum sound is triggered using JavaScript events, and the user interface is styled with CSS. The website is interactive and provides a fun way to play different percussion sounds.",
-        imageUrl: "images/my_projects/Facial Age Estimation Website.png",
-        link: "https://github.com/fnilvuwu/facial-age-estimation-website",
-        website: "https://fnilvuwu.github.io/facial-age-estimation-website/",
+        title: 'PKM-PI Funding 2023',
+        description: 'Received funding for Program Kreativitas Mahasiswa - Penelitian Inovatif (PKM-PI), a national student research program by the Ministry of Education.',
+        imageUrl: '/images/my_awards/pkm-pi-2023.jpeg',
+        date: '2023',
+        link: 'https://persuratan.kemdikbud.go.id/showpdf/tampilkandocument/363067',
         tags: [
+            tags.find(t => t.name === 'Research'),
+            tags.find(t => t.name === 'Project Management'),
+        ].filter(Boolean) as Tag[],
+    },
+    {
+        title: 'Hackathon Winner',
+        description: 'Won first place in a regional hackathon for developing an innovative AI-powered solution.',
+        imageUrl: '/images/my_awards/hackathon-winner.jpeg',
+        date: '2023',
+        link: '#',
+        tags: [
+            tags.find(t => t.name === 'Software Development'),
             tags.find(t => t.name === 'Artificial Intelligence'),
-            tags.find(t => t.name === 'TensorFlow'),
-            tags.find(t => t.name === 'HTML'),
-            tags.find(t => t.name === 'CSS'),
         ].filter(Boolean) as Tag[],
     },
 ];
 
-const techStacks = tags.filter(t => t.type === 'tech').map(t => t.name);
-
-
-export default function ProjectsPage() {
-    // For demo, you may want to add a category/tagType property to tags and filter by that
+export default function AwardsPage() {
     const [selectedTag, setSelectedTag] = useState<string>('All');
-    const [selectedTagType, setSelectedTagType] = useState<'All' | TagType>('All');
+    const [selectedTagType, setSelectedTagType] = useState<'All' | Tag['type']>('All');
 
-    // Filtering logic: filter by tag name and/or tag type
-    const filteredProjects = projects.filter(p => {
+    const filteredAwards = awards.filter(award => {
         if (selectedTag === 'All') return true;
-        return p.tags.some(tag => tag.name === selectedTag && (selectedTagType === 'All' || tag.type === selectedTagType));
+        return award.tags.some(tag => tag.name === selectedTag && (selectedTagType === 'All' || tag.type === selectedTagType));
     });
 
     return (
         <main className="min-h-screen bg-white">
             <article className="max-w-6xl mx-auto px-4 py-8 md:py-8 flex-grow fade-in">
                 <header className="space-y-8 mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">My Projects</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
+                        Awards & Achievements
+                    </h1>
                     <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
-                        PROJECTS I'VE WORKED ON
+                        COMPETITION WINS AND ACHIEVEMENTS
                     </div>
                 </header>
+
                 {/* Filter by tag type */}
                 <div className="flex flex-wrap gap-2 justify-center mb-4">
                     <button
@@ -130,12 +87,13 @@ export default function ProjectsPage() {
                                 borderRadius: '2px',
                                 cursor: 'pointer'
                             }}
-                            onClick={() => setSelectedTagType(type as TagType)}
+                            onClick={() => setSelectedTagType(type as Tag['type'])}
                         >
                             {type.charAt(0).toUpperCase() + type.slice(1)}
                         </button>
                     ))}
                 </div>
+
                 {/* Filter by tag name */}
                 <div className="flex flex-wrap gap-2 justify-center mb-8">
                     <button
@@ -168,40 +126,42 @@ export default function ProjectsPage() {
                         </button>
                     ))}
                 </div>
+
                 <section className="mb-16">
-                    <h2 className="uppercase text-sm font-small tracking-wider text-muted-foreground mb-8 sm:text-left">
-                        LIST OF PROJECTS
+                    <h2 className="uppercase text-sm font-small tracking-wider text-muted-foreground mb-8">
+                        LIST OF AWARDS
                     </h2>
-                    <div className="space-y-8">
-                        {filteredProjects.map((project, index) => (
+                    <div className="space-y-12">
+                        {filteredAwards.map((award, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8"
+                                className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8 border-b pb-8 last:border-b-0"
                             >
                                 <a
-                                    href={project.website}
+                                    href={award.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full h-48 sm:w-96 sm:h-56 mb-4 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative bg-white"
                                 >
                                     <img
-                                        src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
-                                        alt={project.title}
+                                        src={award.imageUrl}
+                                        alt={award.title}
                                         className="object-contain object-center rounded-lg absolute inset-0 w-full h-full"
                                     />
                                 </a>
                                 <div className="flex flex-col space-y-2 flex-grow text-center sm:text-left">
                                     <a
-                                        href={project.link}
+                                        href={award.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-xl font-bold text-[#FF5C00] hover:underline"
+                                        className="text-2xl font-bold text-[#FF5C00] hover:underline"
                                     >
-                                        {project.title}
+                                        {award.title}
                                     </a>
-                                    <p className="text-sm leading-relaxed">{project.description}</p>
+                                    <p className="text-sm text-muted-foreground font-semibold">{award.date}</p>
+                                    <p className="text-sm leading-relaxed">{award.description}</p>
                                     <div className="flex flex-wrap gap-2 mb-2">
-                                        {project.tags.map((tag, i) => (
+                                        {award.tags.map((tag, i) => (
                                             <span
                                                 key={i}
                                                 className="px-3 py-1 text-xs tracking-wide"

@@ -155,13 +155,13 @@ export function NeuralNetwork() {
                 ctx.beginPath()
                 ctx.moveTo(particle.x, particle.y)
                 ctx.lineTo(particle.x - (particle.targetX - particle.x) * 0.1, particle.y - (particle.targetY - particle.y) * 0.1)
-                ctx.strokeStyle = 'rgba(0, 0, 255, 0.4)'
+                ctx.strokeStyle = '#FF5C00'
                 ctx.lineWidth = 2
                 ctx.stroke()
 
                 ctx.beginPath()
                 ctx.arc(particle.x, particle.y, 3, 0, Math.PI * 2)
-                ctx.fillStyle = 'rgba(0, 0, 255, 0.8)'
+                ctx.fillStyle = '#FF5C00'
                 ctx.fill()
 
                 // Trigger letter animation when particle reaches end

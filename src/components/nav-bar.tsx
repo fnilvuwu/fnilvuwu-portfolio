@@ -18,14 +18,21 @@ export function NavBar() {
         setIsMenuOpen(false)
         setIsDropdownOpen(false)
 
-        // Find the target section by id
-        const targetSection = document.getElementById(id)
-        if (targetSection) {
-            // Smooth scroll to the section
-            targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            })
+        // Check if we're on the homepage (root path)
+        const isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.html'
+
+        if (isHomePage) {
+            // If on homepage, scroll to the section
+            const targetSection = document.getElementById(id)
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
+            }
+        } else {
+            // If on another page, redirect to homepage with hash
+            window.location.href = `/#${id}`
         }
     }
 
@@ -36,7 +43,7 @@ export function NavBar() {
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white/80 backdrop-blur-sm">
             <div className="flex items-center justify-between max-w-7xl mx-auto">
-                <a href="#home" className="text-2xl font-bold" onClick={(e) => handleNavClick(e, 'home')}>Fnilvuwu</a>
+                <a href="#home" className="text-2xl font-bold text-black" onClick={(e) => handleNavClick(e, 'home')}>Fnilvuwu</a>
 
                 <div className="hidden md:flex items-center space-x-8">
                     <div className="flex items-center space-x-1">
@@ -60,11 +67,11 @@ export function NavBar() {
                     >
                         <span
                             className="text-sm font-medium"
-                            style={{ userSelect: "none" }}
+                            style={{ userSelect: "none", color: '#FF5C00'}}
                         >
                             PORTFOLIO
                         </span>
-                        <ChevronDown className="h-4 w-4" />
+                        <ChevronDown className="h-4 w-4" color='#FF5C00' />
                         {isDropdownOpen && (
                             <div className="absolute top-full left-0 mt-2 ps-2 pe-4 bg-white rounded-md shadow-lg border border-gray-100">
                                 <a href="#certificates" className="block my-2 text-sm font-medium hover-effect" onClick={(e) => handleNavClick(e, 'certificates')}>

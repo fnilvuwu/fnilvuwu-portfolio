@@ -4,17 +4,28 @@
 
 @layer base {
     :root {
+        /* Arch Linux Theme - White background with cyan accents */
         --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
+        /* #ffffff - White */
+        --foreground: 0 0% 10%;
+        /* #1a1a1a - Dark gray */
+        --muted: 0 0% 96%;
+        /* #f5f5f5 - Light gray */
+        --muted-foreground: 0 0% 45%;
+        /* #737373 - Medium gray */
+        --accent: 187 71% 50%;
+        /* #23d9d9 - Arch cyan */
+        --border: 0 0% 90%;
+        /* #e5e5e5 - Border color */
     }
 
     .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
+        --background: 0 0% 100%;
+        --foreground: 0 0% 10%;
+        --muted: 0 0% 96%;
+        --muted-foreground: 0 0% 45%;
+        --accent: 187 71% 50%;
+        --border: 0 0% 90%;
     }
 }
 
@@ -42,6 +53,7 @@
     .typewriter .cursor {
         display: inline-block;
         animation: blink 1s infinite;
+        color: #000000;
     }
 
     @keyframes blink {
@@ -142,4 +154,8 @@
 .navbar-mobile a {
     padding: 15px;
     position: relative;
+}
+
+a {
+    color: #FF5C00;
 }
