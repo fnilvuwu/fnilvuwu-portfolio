@@ -45,7 +45,7 @@ export default function HomeArticles() {
                                     )}
                                     <p className="text-sm tracking-wide" style={{ color: 'hsl(var(--muted-foreground))' }}>Posted by {article.author} on {article.date}</p>
                                     <p className="text-base italic leading-relaxed" style={{ color: 'hsl(var(--foreground))' }}>{article.subtitle}</p>
-                                    <div className="flex flex-wrap gap-2 mt-2">
+                                    <div className="flex flex-wrap justify-center sm:justify-start gap-2 mt-2">
                                         {article.tags.map((tag, i) => (
                                             <span
                                                 key={i}

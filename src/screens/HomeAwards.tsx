@@ -69,7 +69,7 @@ export default function HomeAwards() {
                                     </a>
                                     <p className="text-sm tracking-wide" style={{ color: 'hsl(var(--muted-foreground))' }}>{award.date}</p>
                                     <p className="text-sm leading-relaxed" style={{ color: 'hsl(var(--foreground))' }}>{award.description}</p>
-                                    <div className="flex flex-wrap gap-2 mt-2">
+                                    <div className="flex flex-wrap justify-center sm:justify-start gap-2 mt-2">
                                         {award.tags.map((tag, i) => (
                                             <span
                                                 key={i}

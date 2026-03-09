@@ -223,7 +223,7 @@ export default function AwardsPage() {
                                     </a>
                                     <p className="text-sm text-muted-foreground font-semibold">{award.date}</p>
                                     <p className="text-sm leading-relaxed">{award.description}</p>
-                                    <div className="flex flex-wrap gap-2 mb-2">
+                                    <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-2">
                                         {award.tags.map((tag, i) => (
                                             <span
                                                 key={i}

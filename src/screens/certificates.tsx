@@ -434,7 +434,7 @@ export default function CertificatesPage() {
                                         />
                                     </div>
                                     <h3 className="text-lg font-medium mt-4">{cert.title}</h3>
-                                    <div className="flex flex-wrap gap-2 mt-2">
+                                    <div className="flex flex-wrap gap-2 mt-2 justify-center">
                                         {cert.tags.map((tag, i) => (
                                             <span
                                                 key={i}

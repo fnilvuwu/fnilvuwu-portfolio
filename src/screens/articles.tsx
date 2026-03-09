@@ -133,7 +133,7 @@ export default function ArticlesPage({ limit, showViewAll = false }: ArticlesPag
                                     ) : (
                                         <h3 className="text-2xl font-bold">{article.title}</h3>
                                     )}
-                                    <div className="flex flex-wrap gap-2 mb-1">
+                                    <div className="flex flex-wrap justify-center sm:justify-start gap-2 mb-1">
                                         {article.tags.map((tag, i) => (
                                             <span
                                                 key={i}

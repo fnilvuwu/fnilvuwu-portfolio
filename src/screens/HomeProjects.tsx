@@ -98,7 +98,7 @@ export default function HomeProjects() {
                                         {project.title}
                                     </a>
                                     <p className="text-sm leading-relaxed" style={{ color: 'hsl(var(--foreground))' }}>{project.description}</p>
-                                    <div className="flex flex-wrap gap-2 mt-2">
+                                    <div className="flex flex-wrap justify-center sm:justify-start gap-2 mt-2">
                                         {project.tags.map((tag, i) => (
                                             <span
                                                 key={i}
