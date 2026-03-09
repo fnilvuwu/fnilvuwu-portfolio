@@ -4,11 +4,11 @@ const experiences = [
         title: "ML Engineer Division",
         imageUrl: "images/my_experience/ML Engineer Division.png",
         date: "January 2024 - Present",
-        duration: "1 year 1 month",
+        duration: "1 year 2 months",
         location: "Braincore.id - Remote",
         link: "https://github.com/Braincore-Engineering",
         details:
-            "Assisted in the development of internal tools and scripts. Participated in code reviews and team meetings. Gained hands-on experience with software development lifecycle.",
+            "Developed and optimized machine learning models for internal projects. Contributed to data preprocessing, model evaluation, and deployment processes.",
     },
     {
         title: "IBM Academy : Hybrid Cloud & Red Hat Cohort",
@@ -18,7 +18,7 @@ const experiences = [
         location: "Infinite Learning Indonesia - Batam, Kepulauan Riau, Indonesia - Hybrid",
         link: "https://www.linkedin.com/posts/infinite-learning-indonesia_infinitelearning-infinitelearningindonesia-ugcPost-7203642454216966144-jS7v?utm_source=social_share_send&utm_medium=member_desktop_web",
         details:
-            "Assisted in the development of internal tools and scripts. Participated in code reviews and team meetings. Gained hands-on experience with software development lifecycle.",
+            "Gained foundational knowledge and practical experience in hybrid cloud architectures and Red Hat technologies. Completed hands-on labs and deployment projects.",
     },
     {
         title: "Mobile Development Laboratory Assistant",
@@ -28,7 +28,7 @@ const experiences = [
         location: "Universitas Hasanuddin - On-site",
         link: "https://github.com/fnilvuwu/ASISTENSI-LAB-PM-02-2024",
         details:
-            "Assisted in the development of internal tools and scripts. Participated in code reviews and team meetings. Gained hands-on experience with software development lifecycle.",
+            "Guided students in mobile application development using modern frameworks. Assisted in grading assignments, debugging code, and conducting laboratory sessions.",
     },
     {
         title: "Machine Learning Cohort",
@@ -38,7 +38,7 @@ const experiences = [
         location: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka - Remote",
         link: "https://github.com/GymGuide",
         details:
-            "Successfully completing Bangkit, specializing in Machine Learning, with Distinction. Bangkit is a Google-led academy designed to produce high-caliber technical talent for world-class Indonesian technology companies and startups.",
+            "Successfully completed Bangkit with Distinction, specializing in Machine Learning. Trained in model development and deployment through a rigorous, Google-led tech program.",
     },
     {
         title: "Object-Oriented Programming (Java) Laboratory",
@@ -48,17 +48,17 @@ const experiences = [
         location: "Universitas Hasanuddin - On-site",
         link: "https://github.com/fnilvuwu/ASISTENSI-G-LAB-OOP-2022y",
         details:
-            "Developed and maintained web applications using React and Node.js. Collaborated with cross-functional teams to define, design, and ship new features. Implemented RESTful APIs and integrated third-party services.",
+            "Mentored students in Java basics and object-oriented programming concepts. Facilitated computer lab sessions, evaluated projects, and provided practical coding assistance.",
     },
     {
         title: "Freelance Graphic Designer",
         imageUrl: "images/my_experience/Freelance Graphic Designer.png",
-        date: "January 2020 - December 2020",
-        duration: "1 year",
+        date: "January 2020 - Present",
+        duration: "5 years",
         location: "Fiverr (Self-employed) - Remote",
         link: "https://www.fiverr.com/fnilvuwu",
         details:
-            "Developed and maintained web applications using React and Node.js. Collaborated with cross-functional teams to define, design, and ship new features. Implemented RESTful APIs and integrated third-party services.",
+            "Designed creative digital assets, including logos, banners, and promotional content for various international clients. Ensured high-quality and timely delivery of visual materials.",
     },
     {
         title: "Leader of Smada Information and Technology Community (SITe.Com)",
@@ -68,7 +68,7 @@ const experiences = [
         location: "SMA Negeri 2 Makassar - On-site",
         link: "https://www.instagram.com/sitecom02",
         details:
-            "Developed and maintained web applications using React and Node.js. Collaborated with cross-functional teams to define, design, and ship new features. Implemented RESTful APIs and integrated third-party services.",
+            "Led a high school technology community, organizing IT-focused events and workshops. Managed the core team and fostered student engagement in digital skills programming.",
     },
     // Add more experiences as needed
 ]

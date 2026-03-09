@@ -27,19 +27,34 @@ export default function HomeAwards() {
                                 className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8 pb-12 last:pb-0"
                                 style={{ borderBottom: index < limitedAwards.length - 1 ? '1px solid hsl(var(--border))' : 'none' }}
                             >
-                                <a
-                                    href={award.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full h-48 sm:w-96 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative rounded-lg overflow-hidden"
-                                    style={{ backgroundColor: 'hsl(var(--muted))', border: '1px solid hsl(var(--border))' }}
-                                >
-                                    <img
-                                        src={award.imageUrl}
-                                        alt={award.title}
-                                        className="object-contain object-center absolute inset-0 w-full h-full transition-transform duration-300 hover:scale-105"
-                                    />
-                                </a>
+                                <div className="flex flex-row gap-3 w-full sm:w-[28rem] lg:w-[32rem] h-48 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0">
+                                    <a
+                                        href={award.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 block ${award.photoUrl ? 'w-1/2' : 'w-full'}`}
+                                    >
+                                        <img
+                                            src={award.certificateUrl}
+                                            alt={`${award.title} Certificate`}
+                                            className="object-contain object-center absolute inset-0 w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                    </a>
+                                    {award.photoUrl && (
+                                        <a
+                                            href={award.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 block w-1/2"
+                                        >
+                                            <img
+                                                src={award.photoUrl}
+                                                alt={`${award.title} Real-life Photo`}
+                                                className="object-cover object-center absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                        </a>
+                                    )}
+                                </div>
                                 <div className="flex flex-col space-y-3 flex-grow text-center sm:text-left">
                                     <a
                                         href={award.link}

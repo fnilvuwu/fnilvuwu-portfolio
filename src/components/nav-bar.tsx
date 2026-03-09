@@ -67,13 +67,16 @@ export function NavBar() {
                     >
                         <span
                             className="text-sm font-medium"
-                            style={{ userSelect: "none", color: '#FF5C00'}}
+                            style={{ userSelect: "none", color: '#FF5C00' }}
                         >
                             PORTFOLIO
                         </span>
                         <ChevronDown className="h-4 w-4" color='#FF5C00' />
                         {isDropdownOpen && (
                             <div className="absolute top-full left-0 mt-2 ps-2 pe-4 bg-white rounded-md shadow-lg border border-gray-100">
+                                <a href="#awards" className="block my-2 text-sm font-medium hover-effect" onClick={(e) => handleNavClick(e, 'awards')}>
+                                    ACHIEVEMENTS
+                                </a>
                                 <a href="#certificates" className="block my-2 text-sm font-medium hover-effect" onClick={(e) => handleNavClick(e, 'certificates')}>
                                     CERTIFICATES
                                 </a>
@@ -101,7 +104,7 @@ export function NavBar() {
 
                 <div className="md:hidden flex items-center">
                     <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
-                        {isMenuOpen ? <X className="h-6 w-6" color='#FF5C00'/> : <Menu className="h-6 w-6" color='#FF5C00' />}
+                        {isMenuOpen ? <X className="h-6 w-6" color='#FF5C00' /> : <Menu className="h-6 w-6" color='#FF5C00' />}
                     </button>
                 </div>
             </div>

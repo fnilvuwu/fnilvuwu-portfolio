@@ -40,7 +40,7 @@ const projects = [
     {
         title: "Bootstrap Tincat Website",
         description:
-            "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements. Each drum sound is triggered using JavaScript events, and the user interface is styled with CSS. The website is interactive and provides a fun way to play different percussion sounds.",
+            "A responsive landing page for a fictional startup called Tincat, built with HTML, CSS, and Bootstrap.",
         imageUrl: "images/my_projects/Bootstrap Tincat Website.png",
         link: "https://github.com/fnilvuwu/tincat-bootstrap",
         website: "https://fnilvuwu.github.io/tincat-bootstrap/",
@@ -54,7 +54,7 @@ const projects = [
     {
         title: "Emotion Detection Website (TFLite on the web)",
         description:
-            "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements. Each drum sound is triggered using JavaScript events, and the user interface is styled with CSS. The website is interactive and provides a fun way to play different percussion sounds.",
+            "A web application that performs real-time facial emotion detection using TensorFlow.js and a pre-trained TFLite model.",
         imageUrl: "images/my_projects/Emotion Detection Website (TFLite on the web).png",
         link: "https://github.com/fnilvuwu/Facial-Emotion-Detection-System",
         website: "https://fnilvuwu.github.io/Facial-Emotion-Detection-System/",
@@ -68,7 +68,7 @@ const projects = [
     {
         title: "Facial Age Estimation Website",
         description:
-            "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements. Each drum sound is triggered using JavaScript events, and the user interface is styled with CSS. The website is interactive and provides a fun way to play different percussion sounds.",
+            "An interactive web app that estimates a person's age from their face in real-time using TensorFlow.js.",
         imageUrl: "images/my_projects/Facial Age Estimation Website.png",
         link: "https://github.com/fnilvuwu/facial-age-estimation-website",
         website: "https://fnilvuwu.github.io/facial-age-estimation-website/",
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
         <main className="min-h-screen bg-white">
             <article className="max-w-6xl mx-auto px-4 py-8 md:py-8 flex-grow fade-in">
                 <header className="space-y-8 mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">My Projects</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">Projects</h1>
                     <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
                         PROJECTS I'VE WORKED ON
                     </div>

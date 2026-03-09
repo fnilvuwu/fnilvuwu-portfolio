@@ -35,7 +35,13 @@ export default function HomeArticles() {
                                     />
                                 </div>
                                 <div className="flex flex-col space-y-3 flex-grow text-center sm:text-left">
-                                    <h3 className="text-2xl font-bold" style={{ color: '#FF5C00' }}>{article.title}</h3>
+                                    {article.link ? (
+                                        <a href={article.link} target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-200 w-fit sm:w-auto mx-auto sm:mx-0">
+                                            <h3 className="text-2xl font-bold" style={{ color: '#FF5C00' }}>{article.title}</h3>
+                                        </a>
+                                    ) : (
+                                        <h3 className="text-2xl font-bold" style={{ color: '#FF5C00' }}>{article.title}</h3>
+                                    )}
                                     <p className="text-sm tracking-wide" style={{ color: 'hsl(var(--muted-foreground))' }}>Posted by {article.author} on {article.date}</p>
                                     <p className="text-base italic leading-relaxed" style={{ color: 'hsl(var(--foreground))' }}>{article.subtitle}</p>
                                     <div className="flex flex-wrap gap-2 mt-2">

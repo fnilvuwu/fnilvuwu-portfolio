@@ -35,7 +35,7 @@ const projects = [
     {
         title: "Bootstrap Tincat Website",
         description:
-            "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements.",
+            "A responsive landing page for a fictional startup called Tincat, built with HTML, CSS, and Bootstrap.",
         imageUrl: "images/my_projects/Bootstrap Tincat Website.png",
         link: "https://github.com/fnilvuwu/tincat-bootstrap",
         website: "https://fnilvuwu.github.io/tincat-bootstrap/",
@@ -56,7 +56,7 @@ export default function HomeProjects() {
         <main className="min-h-screen bg-white">
             <article className="max-w-6xl mx-auto px-6 py-12 md:py-16 flex-grow fade-in">
                 <header className="space-y-6 mb-20">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center" style={{ color: 'hsl(var(--foreground))' }}>My Projects</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center" style={{ color: 'hsl(var(--foreground))' }}>Projects</h1>
                     <div className="text-center uppercase tracking-[0.2em] text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
                         [ FEATURED PROJECTS ]
                     </div>

@@ -6,45 +6,17 @@ import { tags } from './services';
 
 export const articles = [
     {
-        title: "Hello world!",
-        subtitle: "I want to be the king of pirates!",
-        author: "admin",
-        date: "August 18, 2023",
-        imageUrl: "images/my_articles/luffy-gear5.jpg",
-        tags: [tags.find(t => t.name === 'Writing')].filter(Boolean) as Tag[],
-    },
-    {
-        title: "Building Modern Web Applications",
-        subtitle: "A comprehensive guide to building scalable web apps with React and TypeScript",
-        author: "admin",
-        date: "September 15, 2023",
-        imageUrl: "images/my_articles/luffy-gear5.jpg",
-        tags: [tags.find(t => t.name === 'Development'), tags.find(t => t.name === 'Writing')].filter(Boolean) as Tag[],
-    },
-    {
-        title: "The Future of AI in Software Development",
-        subtitle: "Exploring how artificial intelligence is transforming the way we write code",
-        author: "admin",
-        date: "October 3, 2023",
-        imageUrl: "images/my_articles/luffy-gear5.jpg",
-        tags: [tags.find(t => t.name === 'AI'), tags.find(t => t.name === 'Writing')].filter(Boolean) as Tag[],
-    },
-    {
-        title: "Mastering Git and Version Control",
-        subtitle: "Essential Git workflows and best practices for collaborative development",
-        author: "admin",
-        date: "November 12, 2023",
-        imageUrl: "images/my_articles/luffy-gear5.jpg",
-        tags: [tags.find(t => t.name === 'Development'), tags.find(t => t.name === 'Writing')].filter(Boolean) as Tag[],
-    },
-    {
-        title: "Cloud Architecture Best Practices",
-        subtitle: "Designing resilient and scalable cloud infrastructure for modern applications",
-        author: "admin",
-        date: "December 8, 2023",
-        imageUrl: "images/my_articles/luffy-gear5.jpg",
-        tags: [tags.find(t => t.name === 'Development'), tags.find(t => t.name === 'Writing')].filter(Boolean) as Tag[],
-    },
+        title: "Fitpedia Sebagai Model Solusi Inovatif untuk Meningkatkan Kebugaran Masyarakat Melalui Teknologi AI",
+        subtitle: "HealthSense: Journal of Public Health Perspective 1 (1), 1-7",
+        author: "Rahmatullah Rahmatullah, Nabila Athira, Muh.Ilham Maulana Ramlan, Muhammad Fahdel Putra Mustafa, Muhammad Ilham Syahfitrah Hendra, Muh.Fahri, Eliyah Acantha Manapa Sampetoding*, Yulita Sirinti Pongtambing, Esther Sanda Manapa",
+        date: "2024",
+        imageUrl: "images/my_articles/fitpedia-paper-thumbnail.jpg",
+        link: "https://journal.ininnawaparaedu.com/healthsense/article/view/142",
+        tags: [
+            tags.find(t => t.name === 'Research'),
+            tags.find(t => t.name === 'Artificial Intelligence'),
+        ].filter(Boolean) as Tag[],
+    }
 ];
 
 interface ArticlesPageProps {
@@ -153,7 +125,13 @@ export default function ArticlesPage({ limit, showViewAll = false }: ArticlesPag
                                     />
                                 </div>
                                 <div className="flex flex-col space-y-2 flex-grow text-center sm:text-left">
-                                    <h3 className="text-2xl font-bold">{article.title}</h3>
+                                    {article.link ? (
+                                        <a href={article.link} target="_blank" rel="noopener noreferrer" className="hover:underline transition-all duration-200">
+                                            <h3 className="text-2xl font-bold text-[#FF5C00]">{article.title}</h3>
+                                        </a>
+                                    ) : (
+                                        <h3 className="text-2xl font-bold">{article.title}</h3>
+                                    )}
                                     <div className="flex flex-wrap gap-2 mb-1">
                                         {article.tags.map((tag, i) => (
                                             <span
