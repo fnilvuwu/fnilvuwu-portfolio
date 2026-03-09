@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { Tag } from './services';
 import { tags } from './services';
+import { FilterControls } from '../components/filter-controls';
 
 const certifications = [
     {
@@ -333,90 +334,44 @@ const certifications = [
     },
 ];
 
+const uniqueTags = Array.from(new Map(certifications.flatMap(item => item.tags).map(t => [t.name, t])).values());
+
 export default function CertificatesPage() {
     const [selectedTag, setSelectedTag] = useState<string>('All');
     const [selectedTagType, setSelectedTagType] = useState<'All' | Tag['type']>('All');
+    const [searchQuery, setSearchQuery] = useState('');
 
     const filteredCerts = certifications.filter(cert => {
-        if (selectedTag === 'All') return true;
-        return cert.tags.some(tag => tag.name === selectedTag && (selectedTagType === 'All' || tag.type === selectedTagType));
+        const matchesTagType = selectedTagType === 'All' || cert.tags.some(tag => tag.type === selectedTagType);
+        const matchesTagName = selectedTag === 'All' || cert.tags.some(tag => tag.name === selectedTag);
+        
+        const query = searchQuery.toLowerCase();
+        const matchesSearch = !query || 
+            cert.title.toLowerCase().includes(query);
+
+        return matchesTagType && matchesTagName && matchesSearch;
     });
 
     return (
         <main className="min-h-screen bg-white">
-            <article className="max-w-6xl mx-auto px-4 py-8 md:py-8 flex-grow fade-in">
-                <header className="space-y-8 mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center">
+            <article className="max-w-6xl mx-auto px-6 py-12 md:py-16 flex-grow fade-in">
+                <header className="space-y-6 mb-20">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-center" style={{ color: 'hsl(var(--foreground))' }}>
                         Certificates
                     </h1>
-                    <div className="text-center uppercase tracking-wider text-sm text-muted-foreground">
-                        CERTIFICATIONS I'VE EARNED
+                    <div className="text-center uppercase tracking-[0.2em] text-xs" style={{ color: 'hsl(var(--muted-foreground))' }}>
+                        [ FEATURED CERTIFICATIONS ]
                     </div>
                 </header>
-                {/* Filter by tag type */}
-                <div className="flex flex-wrap gap-2 justify-center mb-4">
-                    <button
-                        className="px-3 py-1 text-xs tracking-wide"
-                        style={{
-                            backgroundColor: selectedTagType === 'All' ? '#FF5C00' : 'transparent',
-                            color: selectedTagType === 'All' ? '#ffffff' : 'hsl(var(--foreground))',
-                            border: selectedTagType === 'All' ? '1px solid #FF5C00' : '1px solid hsl(var(--border))',
-                            borderRadius: '2px',
-                            cursor: 'pointer'
-                        }}
-                        onClick={() => setSelectedTagType('All')}
-                    >
-                        All Types
-                    </button>
-                    {['service', 'skill', 'tech'].map((type) => (
-                        <button
-                            key={type}
-                            className="px-3 py-1 text-xs tracking-wide"
-                            style={{
-                                backgroundColor: selectedTagType === type ? '#FF5C00' : 'transparent',
-                                color: selectedTagType === type ? '#ffffff' : 'hsl(var(--foreground))',
-                                border: selectedTagType === type ? '1px solid #FF5C00' : '1px solid hsl(var(--border))',
-                                borderRadius: '2px',
-                                cursor: 'pointer'
-                            }}
-                            onClick={() => setSelectedTagType(type as Tag['type'])}
-                        >
-                            {type.charAt(0).toUpperCase() + type.slice(1)}
-                        </button>
-                    ))}
-                </div>
-                {/* Filter by tag name */}
-                <div className="flex flex-wrap gap-2 justify-center mb-8">
-                    <button
-                        className="px-3 py-1 text-xs tracking-wide"
-                        style={{
-                            backgroundColor: selectedTag === 'All' ? '#7c3aed' : 'transparent',
-                            color: selectedTag === 'All' ? '#ffffff' : 'hsl(var(--foreground))',
-                            border: selectedTag === 'All' ? '1px solid #7c3aed' : '1px solid hsl(var(--border))',
-                            borderRadius: '2px',
-                            cursor: 'pointer'
-                        }}
-                        onClick={() => setSelectedTag('All')}
-                    >
-                        All Tags
-                    </button>
-                    {tags.filter(t => selectedTagType === 'All' || t.type === selectedTagType).map((tag) => (
-                        <button
-                            key={tag.name}
-                            className="px-3 py-1 text-xs tracking-wide"
-                            style={{
-                                backgroundColor: selectedTag === tag.name ? '#7c3aed' : 'transparent',
-                                color: selectedTag === tag.name ? '#ffffff' : 'hsl(var(--foreground))',
-                                border: selectedTag === tag.name ? '1px solid #7c3aed' : '1px solid hsl(var(--border))',
-                                borderRadius: '2px',
-                                cursor: 'pointer'
-                            }}
-                            onClick={() => setSelectedTag(tag.name)}
-                        >
-                            {tag.name}
-                        </button>
-                    ))}
-                </div>
+                <FilterControls 
+                    availableTags={uniqueTags}
+                    selectedTagType={selectedTagType}
+                    setSelectedTagType={setSelectedTagType}
+                    selectedTag={selectedTag}
+                    setSelectedTag={setSelectedTag}
+                    searchQuery={searchQuery}
+                    setSearchQuery={setSearchQuery}
+                />
                 <section className="mb-16">
                     <h2 className="uppercase text-sm font-small tracking-wider text-muted-foreground mb-8">
                         LIST OF CERTIFICATES

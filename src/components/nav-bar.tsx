@@ -116,9 +116,18 @@ export function NavBar() {
                     <a href="#services" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'services')}>SERVICES</a>
                     <div className="text-center">
                         <span className="block py-2 text-sm font-medium text-gray-900">PORTFOLIO</span>
-                        <a href="#certificates" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'certificates')}>CERTIFICATES</a>
-                        <a href="#experience" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'experience')}>EXPERIENCE</a>
-                        <a href="#projects" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'projects')}>PROJECTS</a>
+                        <a href="#awards" className="block my-2 text-sm font-medium hover-effect" onClick={(e) => handleNavClick(e, 'awards')}>
+                            ACHIEVEMENTS
+                        </a>
+                        <a href="#certificates" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'certificates')}>
+                            CERTIFICATES
+                        </a>
+                        <a href="#experience" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'experience')}>
+                            EXPERIENCE
+                        </a>
+                        <a href="#projects" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'projects')}>
+                            PROJECTS
+                        </a>
                     </div>
                     <a href="#articles" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'articles')}>ARTICLES</a>
                     <a href="#contact" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'contact')}>CONTACT</a>
