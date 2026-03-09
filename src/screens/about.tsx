@@ -16,6 +16,7 @@ export default function AboutPage() {
                     <div className="flex flex-col items-center p-4 space-y-6 mb-8">
                         <div className="w-40 h-40 rounded-full overflow-hidden" style={{ border: '2px solid #FF5C00' }}>
                             <img
+                                loading="lazy"
                                 src="/images/me.png"
                                 alt="Rahmatullah R."
                                 width={160}

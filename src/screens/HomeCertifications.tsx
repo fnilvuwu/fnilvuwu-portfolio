@@ -65,6 +65,7 @@ export default function HomeCertifications() {
                                 <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center w-full group">
                                     <div className="w-full h-48 sm:h-56 mb-4 relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
                                         <img
+                                            loading="lazy"
                                             src={cert.imageUrl}
                                             alt={cert.title}
                                             className="object-contain object-center absolute inset-0 w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"

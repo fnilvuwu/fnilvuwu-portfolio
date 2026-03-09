@@ -185,6 +185,7 @@ export default function ProjectsPage() {
                                     className="w-full h-48 sm:w-96 sm:h-56 mb-4 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative bg-white"
                                 >
                                     <img
+                                        loading="lazy"
                                         src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
                                         alt={project.title}
                                         className="object-contain object-center rounded-lg absolute inset-0 w-full h-full"

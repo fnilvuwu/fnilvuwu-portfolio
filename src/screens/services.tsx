@@ -76,15 +76,7 @@ export const tags: Tag[] = [
 ];
 
 
-function handleTagClick(tag: Tag) {
-    // Pass tag name and type as query params to /explore
-    if (typeof window !== 'undefined') {
-        const url = new URL('/explore', window.location.origin);
-        url.searchParams.set('tag', tag.name);
-        url.searchParams.set('tagType', tag.type);
-        window.location.href = url.toString();
-    }
-}
+
 
 
 export default function ServicesPage() {
@@ -110,8 +102,7 @@ export default function ServicesPage() {
                         {serviceTags.map((service, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col items-center space-y-4 text-center transform transition-transform hover:scale-110 cursor-pointer"
-                                onClick={() => handleTagClick(service)}
+                                className="flex flex-col items-center space-y-4 text-center transform transition-transform hover:scale-110"
                                 title={`Show related items for ${service.name}`}
                             >
                                 <div className="h-16 w-16 flex items-center justify-center">
@@ -137,8 +128,7 @@ export default function ServicesPage() {
                         {skillTags.map((skill, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col items-center space-y-4 text-center transform transition-transform hover:scale-110 cursor-pointer"
-                                onClick={() => handleTagClick(skill)}
+                                className="flex flex-col items-center space-y-4 text-center transform transition-transform hover:scale-110"
                                 title={`Show related items for ${skill.name}`}
                             >
                                 <div className="h-16 w-16 flex items-center justify-center">
@@ -164,14 +154,14 @@ export default function ServicesPage() {
                         {techTags.map((tech, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col items-center cursor-pointer"
-                                onClick={() => handleTagClick(tech)}
+                                className="flex flex-col items-center"
                                 title={`Show related items for ${tech.name}`}
                             >
                                 {tech.imageUrl && (
                                     <img
+                                        loading="lazy"
                                         src={tech.imageUrl}
-                                        alt={tech.name + ' Icon'}
+                                        alt={tech.name}
                                         width={64}
                                         height={64}
                                         className="h-16 w-16 object-contain transform transition-transform hover:scale-110"

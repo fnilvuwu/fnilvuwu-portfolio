@@ -20,7 +20,7 @@ export const awards: Award[] = [
         certificateUrl: '/images/my_awards/openthegate-2025-certificate.jfif',
         photoUrl: '/images/my_awards/openthegate-2025-photo.jfif',
         date: 'Jun 2025',
-        link: '#',
+        link: '/images/my_awards/openthegate-2025-certificate.jfif',
         tags: [
             tags.find(t => t.name === 'Software Development'),
             tags.find(t => t.name === 'Artificial Intelligence'),
@@ -32,7 +32,7 @@ export const awards: Award[] = [
         certificateUrl: '/images/my_awards/makassar-hackathon-2024-certificate.jfif',
         photoUrl: '/images/my_awards/makassar-hackathon-2024-photo.jfif',
         date: 'Jun 2024',
-        link: '#',
+        link: '/images/my_awards/makassar-hackathon-2024-certificate.jfif',
         tags: [
             tags.find(t => t.name === 'Software Development'),
         ].filter(Boolean) as Tag[],
@@ -56,7 +56,7 @@ export const awards: Award[] = [
         certificateUrl: '/images/my_awards/eniac-vol-2-certificate.jfif',
         photoUrl: '/images/my_awards/eniac-vol-2-photo.jpg',
         date: 'Oct 2019',
-        link: '#',
+        link: '/images/my_awards/eniac-vol-2-certificate.jfif',
         tags: [
             tags.find(t => t.name === 'Photo Editing'),
         ].filter(Boolean) as Tag[],
@@ -67,7 +67,7 @@ export const awards: Award[] = [
         certificateUrl: '/images/my_awards/justice-show-videography-photo-1.jpg',
         photoUrl: '/images/my_awards/justice-show-videography-photo-2.jpg',
         date: 'Jul 2019',
-        link: '#',
+        link: '/images/my_awards/justice-show-videography-photo-1.jpg',
         tags: [
             tags.find(t => t.name === 'Video Editing'),
         ].filter(Boolean) as Tag[],
@@ -78,7 +78,7 @@ export const awards: Award[] = [
         certificateUrl: '/images/my_awards/eniac-vol-1-certificate.jfif',
         photoUrl: '/images/my_awards/eniac-vol-1-photo.jpg',
         date: 'Sep 2018',
-        link: '#',
+        link: '/images/my_awards/eniac-vol-1-certificate.jfif',
         tags: [
             tags.find(t => t.name === 'Photo Editing'),
         ].filter(Boolean) as Tag[],
@@ -184,12 +184,13 @@ export default function AwardsPage() {
                             >
                                 <div className="flex flex-row gap-3 w-full sm:w-[28rem] lg:w-[32rem] h-48 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0">
                                     <a
-                                        href={award.link}
+                                        href={award.certificateUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 block ${award.photoUrl ? 'w-1/2' : 'w-full'}`}
                                     >
                                         <img
+                                            loading="lazy"
                                             src={award.certificateUrl}
                                             alt={`${award.title} Certificate`}
                                             className="object-contain object-center absolute inset-0 w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"
@@ -197,14 +198,15 @@ export default function AwardsPage() {
                                     </a>
                                     {award.photoUrl && (
                                         <a
-                                            href={award.link}
+                                            href={award.photoUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 block w-1/2"
                                         >
                                             <img
+                                                loading="lazy"
                                                 src={award.photoUrl}
-                                                alt={`${award.title} Real-life Photo`}
+                                                alt={`${award.title} award presentation`}
                                                 className="object-cover object-center absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105"
                                             />
                                         </a>

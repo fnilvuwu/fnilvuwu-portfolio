@@ -29,12 +29,13 @@ export default function HomeAwards() {
                             >
                                 <div className="flex flex-row gap-3 w-full sm:w-[28rem] lg:w-[32rem] h-48 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0">
                                     <a
-                                        href={award.link}
+                                        href={award.certificateUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className={`relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 block ${award.photoUrl ? 'w-1/2' : 'w-full'}`}
                                     >
                                         <img
+                                            loading="lazy"
                                             src={award.certificateUrl}
                                             alt={`${award.title} Certificate`}
                                             className="object-contain object-center absolute inset-0 w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"
@@ -42,14 +43,15 @@ export default function HomeAwards() {
                                     </a>
                                     {award.photoUrl && (
                                         <a
-                                            href={award.link}
+                                            href={award.photoUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 block w-1/2"
                                         >
                                             <img
+                                                loading="lazy"
                                                 src={award.photoUrl}
-                                                alt={`${award.title} Real-life Photo`}
+                                                alt={`${award.title} award presentation`}
                                                 className="object-cover object-center absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105"
                                             />
                                         </a>

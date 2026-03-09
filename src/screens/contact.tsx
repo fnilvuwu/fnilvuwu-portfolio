@@ -79,6 +79,7 @@ export default function ContactPage() {
                             {/* Map */}
                             <section className="md:w-1/2">
                                 <iframe
+                                    title="Google Maps Location of Hasanuddin University"
                                     width="100%"
                                     height="450"
                                     style={{ border: 0 }}

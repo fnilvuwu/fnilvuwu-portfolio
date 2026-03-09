@@ -133,6 +133,7 @@ export default function ExperiencePage() {
                                                 >
                                                     <div className="relative h-56 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
                                                         <img
+                                                            loading="lazy"
                                                             src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
                                                             alt={exp.title}
                                                             className="object-contain object-center w-full h-full bg-white"
@@ -156,6 +157,7 @@ export default function ExperiencePage() {
                                                 >
                                                     <div className="relative h-48 rounded-lg overflow-hidden shadow-md">
                                                         <img
+                                                            loading="lazy"
                                                             src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
                                                             alt={exp.title}
                                                             className="object-contain object-center w-full h-full bg-white"

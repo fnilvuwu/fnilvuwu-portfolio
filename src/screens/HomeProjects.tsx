@@ -81,6 +81,7 @@ export default function HomeProjects() {
                                     style={{ backgroundColor: 'hsl(var(--muted))', border: '1px solid hsl(var(--border))' }}
                                 >
                                     <img
+                                        loading="lazy"
                                         src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
                                         alt={project.title}
                                         className="object-contain object-center absolute inset-0 w-full h-full transition-transform duration-300 hover:scale-105"

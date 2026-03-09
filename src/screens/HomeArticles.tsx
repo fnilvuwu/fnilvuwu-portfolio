@@ -29,6 +29,7 @@ export default function HomeArticles() {
                             >
                                 <div className="w-full h-48 sm:w-96 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative rounded-lg overflow-hidden" style={{ backgroundColor: 'hsl(var(--muted))', border: '1px solid hsl(var(--border))' }}>
                                     <img
+                                        loading="lazy"
                                         src={article.imageUrl.startsWith('/') ? article.imageUrl : '/' + article.imageUrl}
                                         alt={article.title}
                                         className="object-contain object-center absolute inset-0 w-full h-full transition-transform duration-300 hover:scale-105"
