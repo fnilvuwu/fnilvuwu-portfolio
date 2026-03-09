@@ -1,4 +1,6 @@
 
+import { Download } from 'lucide-react';
+
 export default function AboutPage() {
     // put hobby, and contact here instead
     return (
@@ -41,6 +43,30 @@ export default function AboutPage() {
                         <p className="leading-relaxed text-center">
                             Feel free to explore my portfolio to see how my skills and services can contribute to your success. Let's work together!
                         </p>
+                        
+                        <div className="flex justify-center mt-12 pt-8">
+                            <a
+                                href="/CV_ATS_Rahmatullah_12_08_2025.pdf"
+                                download="CV_ATS_Rahmatullah_12_08_2025.pdf"
+                                className="inline-flex items-center gap-2 px-8 py-3 text-sm tracking-wider uppercase transition-all duration-200"
+                                style={{
+                                    backgroundColor: 'transparent',
+                                    border: '2px solid #FF5C00',
+                                    borderRadius: '2px',
+                                    color: '#FF5C00'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#FF5C00';
+                                    e.currentTarget.style.color = '#ffffff';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = 'transparent';
+                                    e.currentTarget.style.color = '#FF5C00';
+                                }}
+                            >
+                                [ Download CV ]
+                            </a>
+                        </div>
                     </div>
                 </section>
             </article>

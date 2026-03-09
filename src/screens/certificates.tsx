@@ -424,12 +424,12 @@ export default function CertificatesPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         {filteredCerts.map((cert, index) => (
                             <div key={index} className="flex flex-col items-center text-center">
-                                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center w-full">
-                                    <div className="w-full h-48 sm:w-96 sm:h-56 mb-4 sm:mb-0 relative bg-white">
+                                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center w-full group">
+                                    <div className="w-full h-48 sm:h-56 mb-4 relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
                                         <img
                                             src={cert.imageUrl}
                                             alt={cert.title}
-                                            style={{ objectFit: 'contain', objectPosition: 'center', borderRadius: '0.5rem', width: '100%', height: '100%' }}
+                                            className="object-contain object-center absolute inset-0 w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"
                                         />
                                     </div>
                                     <h3 className="text-lg font-medium mt-4">{cert.title}</h3>
