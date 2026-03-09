@@ -56,7 +56,7 @@ export default function ContactPage() {
                                         <div>
                                             <p className="font-medium" style={{ color: '#FF5C00' }}>Phone</p>
                                             <a href="tel:+6287788362583" className="text-gray-600 hover:text-[#FF5C00] transition-colors">
-                                                +62 853 9401 8318
+                                                +62 877 8836 2583
                                             </a>
                                         </div>
                                     </div>
