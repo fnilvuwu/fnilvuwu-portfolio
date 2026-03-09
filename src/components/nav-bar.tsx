@@ -116,7 +116,7 @@ export function NavBar() {
                     <a href="#services" className="block py-2 text-sm font-medium text-gray-700 text-center" onClick={(e) => handleNavClick(e, 'services')}>SERVICES</a>
                     <div className="text-center">
                         <span className="block py-2 text-sm font-medium text-gray-900">PORTFOLIO</span>
-                        <a href="#awards" className="block my-2 text-sm font-medium hover-effect" onClick={(e) => handleNavClick(e, 'awards')}>
+                        <a href="#awards" className="block my-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'awards')}>
                             ACHIEVEMENTS
                         </a>
                         <a href="#certificates" className="block py-2 text-sm font-medium text-gray-600" onClick={(e) => handleNavClick(e, 'certificates')}>
