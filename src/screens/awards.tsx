@@ -149,7 +149,7 @@ export default function AwardsPage() {
                                     {award.photoUrl && (
                                         <ZoomableImage
                                             src={award.photoUrl}
-                                            alt={`${award.title} award presentation`}
+                                            alt={`${award.title} Award`}
                                             className="bg-white rounded-lg shadow-sm border border-slate-100 group transition-all duration-300 hover:shadow-md hover:-translate-y-1 w-1/2"
                                             imgClassName="object-cover object-center w-full h-full transition-transform duration-500 group-hover:scale-105"
                                         />
