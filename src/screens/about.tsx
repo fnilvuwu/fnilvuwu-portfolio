@@ -1,5 +1,3 @@
-
-
 export default function AboutPage() {
     // put hobby, and contact here instead
     return (
@@ -16,7 +14,7 @@ export default function AboutPage() {
                         <div className="w-40 h-40 rounded-full overflow-hidden" style={{ border: '2px solid #FF5C00' }}>
                             <img
                                 loading="lazy"
-                                src="/images/me.png"
+                                src="/images/me.webp"
                                 alt="Rahmatullah R."
                                 width={160}
                                 height={160}
@@ -44,7 +42,7 @@ export default function AboutPage() {
                             Feel free to explore my portfolio to see how my skills and services can contribute to your success. Let's work together!
                         </p>
 
-                        <div className="flex justify-center mt-12 pt-8">
+                        <div className="flex flex-col items-center justify-center mt-12 pt-8">
                             <a
                                 href="/CV_ATS_Rahmatullah.pdf"
                                 download="CV_ATS_Rahmatullah.pdf"
@@ -67,7 +65,9 @@ export default function AboutPage() {
                                 [ Download CV ]
                             </a>
 
-                            <span className="mt-3 text-xs text-gray-400">
+                            <span
+                                className="mt-3 text-xs"
+                            >
                                 Last updated: 10 Aug 2026
                             </span>
                         </div>

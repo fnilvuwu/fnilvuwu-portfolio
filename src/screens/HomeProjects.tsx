@@ -6,7 +6,7 @@ const projects = [
     {
         title: "Blog with Users",
         description: "A blog application with user authentication and CRUD functionality.",
-        imageUrl: "images/my_projects/Blog with Users.png",
+        imageUrl: "images/my_projects/Blog with Users.webp",
         link: "https://github.com/fnilvuwu/Starting-Files---blog-with-users-start",
         website: "https://starting-files-blog-with-users-start-fnilvuwus-projects.vercel.app/",
         tags: [
@@ -22,7 +22,7 @@ const projects = [
         title: "Drum Kit Website",
         description:
             "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements.",
-        imageUrl: "images/my_projects/Drum Kit Website.png",
+        imageUrl: "images/my_projects/Drum Kit Website.webp",
         link: "https://github.com/fnilvuwu/drum-kit-website",
         website: "https://fnilvuwu.github.io/drum-kit-website/",
         tags: [
@@ -36,7 +36,7 @@ const projects = [
         title: "Bootstrap Tincat Website",
         description:
             "A responsive landing page for a fictional startup called Tincat, built with HTML, CSS, and Bootstrap.",
-        imageUrl: "images/my_projects/Bootstrap Tincat Website.png",
+        imageUrl: "images/my_projects/Bootstrap Tincat Website.webp",
         link: "https://github.com/fnilvuwu/tincat-bootstrap",
         website: "https://fnilvuwu.github.io/tincat-bootstrap/",
         tags: [

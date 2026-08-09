@@ -11,7 +11,7 @@ export const articles = [
         subtitle: "HealthSense: Journal of Public Health Perspective 1 (1), 1-7",
         author: "Rahmatullah Rahmatullah, Nabila Athira, Muh.Ilham Maulana Ramlan, Muhammad Fahdel Putra Mustafa, Muhammad Ilham Syahfitrah Hendra, Muh.Fahri, Eliyah Acantha Manapa Sampetoding*, Yulita Sirinti Pongtambing, Esther Sanda Manapa",
         date: "2024",
-        imageUrl: "images/my_articles/fitpedia-paper-thumbnail.jpg",
+        imageUrl: "images/my_articles/fitpedia-paper-thumbnail.webp",
         link: "https://journal.ininnawaparaedu.com/healthsense/article/view/142",
         tags: [
             tags.find(t => t.name === 'Research'),

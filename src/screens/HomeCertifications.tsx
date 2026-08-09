@@ -5,7 +5,7 @@ import { tags } from './services';
 const certifications = [
     {
         title: 'Generative Adversarial Networks (GANs)',
-        imageUrl: '/images/my_certificates/Generative Adversarial Networks (GANs).jpeg',
+        imageUrl: '/images/my_certificates/Generative Adversarial Networks (GANs).webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/GVKDBBB2OAUC',
         tags: [
             tags.find(t => t.name === 'Artificial Intelligence'),
@@ -17,7 +17,7 @@ const certifications = [
     },
     {
         title: 'Red Hat Certified System Administrator (RHCSA)',
-        imageUrl: '/images/my_certificates/Red Hat Certified System Administrator (RHCSA).png',
+        imageUrl: '/images/my_certificates/Red Hat Certified System Administrator (RHCSA).webp',
         link: 'https://www.credly.com/badges/68647f61-5159-44ac-ae53-b9de983931c4',
         tags: [
             tags.find(t => t.name === 'Linux'),
@@ -28,7 +28,7 @@ const certifications = [
     },
     {
         title: 'Google Data Analytics',
-        imageUrl: '/images/my_certificates/Google Data Analytics.jpeg',
+        imageUrl: '/images/my_certificates/Google Data Analytics.webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/LBYH449PQ9MF',
         tags: [
             tags.find(t => t.name === 'Data Analytics'),

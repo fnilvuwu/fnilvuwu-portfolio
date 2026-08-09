@@ -2,7 +2,7 @@
 const experiences = [
     {
         title: "ML Engineer Division",
-        imageUrl: "images/my_experience/ML Engineer Division.png",
+        imageUrl: "images/my_experience/ML Engineer Division.webp",
         date: "January 2024 - Present",
         duration: "1 year 2 months",
         location: "Braincore.id - Remote",
@@ -12,7 +12,7 @@ const experiences = [
     },
     {
         title: "IBM Academy : Hybrid Cloud & Red Hat Cohort",
-        imageUrl: "images/my_experience/IBM Academy - Hybrid Cloud & Red Hat Cohort.jpeg",
+        imageUrl: "images/my_experience/IBM Academy - Hybrid Cloud & Red Hat Cohort.webp",
         date: "February 2024 - July 2024",
         duration: "6 months",
         location: "Infinite Learning Indonesia - Batam, Kepulauan Riau, Indonesia - Hybrid",
@@ -22,7 +22,7 @@ const experiences = [
     },
     {
         title: "Mobile Development Laboratory Assistant",
-        imageUrl: "images/my_experience/Mobile Development Laboratory Assistant.jpeg",
+        imageUrl: "images/my_experience/Mobile Development Laboratory Assistant.webp",
         date: "February 2024 - July 2024",
         duration: "6 months",
         location: "Universitas Hasanuddin - On-site",
@@ -32,7 +32,7 @@ const experiences = [
     },
     {
         title: "Machine Learning Cohort",
-        imageUrl: "images/my_experience/Machine Learning Cohort.jpeg",
+        imageUrl: "images/my_experience/Machine Learning Cohort.webp",
         date: "August 2023 - January 2024",
         duration: "6 Months",
         location: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka - Remote",
@@ -42,7 +42,7 @@ const experiences = [
     },
     {
         title: "Object-Oriented Programming (Java) Laboratory",
-        imageUrl: "images/my_experience/Object-Oriented Programming (OOP) Laboratory Assistant.jpeg",
+        imageUrl: "images/my_experience/Object-Oriented Programming (OOP) Laboratory Assistant.webp",
         date: "February 2023 - July 2023",
         duration: "6 months",
         location: "Universitas Hasanuddin - On-site",
@@ -52,7 +52,7 @@ const experiences = [
     },
     {
         title: "Freelance Graphic Designer",
-        imageUrl: "images/my_experience/Freelance Graphic Designer.png",
+        imageUrl: "images/my_experience/Freelance Graphic Designer.webp",
         date: "January 2020 - Present",
         duration: "5 years",
         location: "Fiverr (Self-employed) - Remote",
@@ -62,7 +62,7 @@ const experiences = [
     },
     {
         title: "Leader of Smada Information and Technology Community (SITe.Com)",
-        imageUrl: "images/my_experience/Leader.jpeg",
+        imageUrl: "images/my_experience/Leader.webp",
         date: "January 2018 - January 2019",
         duration: "1 year 1 month",
         location: "SMA Negeri 2 Makassar - On-site",

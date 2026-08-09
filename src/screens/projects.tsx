@@ -12,7 +12,7 @@ const projects = [
     {
         title: "Blog with Users",
         description: "A blog application with user authentication and CRUD functionality.",
-        imageUrl: "images/my_projects/Blog with Users.png",
+        imageUrl: "images/my_projects/Blog with Users.webp",
         link: "https://github.com/fnilvuwu/Starting-Files---blog-with-users-start",
         website: "https://starting-files-blog-with-users-start-fnilvuwus-projects.vercel.app/",
         tags: [
@@ -28,7 +28,7 @@ const projects = [
         title: "Drum Kit Website",
         description:
             "This project is a Drum Kit website built using HTML, CSS, and JavaScript. It allows users to interact with a virtual drum kit by pressing specific keys or clicking on drum elements. Each drum sound is triggered using JavaScript events, and the user interface is styled with CSS. The website is interactive and provides a fun way to play different percussion sounds.",
-        imageUrl: "images/my_projects/Drum Kit Website.png",
+        imageUrl: "images/my_projects/Drum Kit Website.webp",
         link: "https://github.com/fnilvuwu/drum-kit-website",
         website: "https://fnilvuwu.github.io/drum-kit-website/",
         tags: [
@@ -42,7 +42,7 @@ const projects = [
         title: "Bootstrap Tincat Website",
         description:
             "A responsive landing page for a fictional startup called Tincat, built with HTML, CSS, and Bootstrap.",
-        imageUrl: "images/my_projects/Bootstrap Tincat Website.png",
+        imageUrl: "images/my_projects/Bootstrap Tincat Website.webp",
         link: "https://github.com/fnilvuwu/tincat-bootstrap",
         website: "https://fnilvuwu.github.io/tincat-bootstrap/",
         tags: [
@@ -56,7 +56,7 @@ const projects = [
         title: "Emotion Detection Website (TFLite on the web)",
         description:
             "A web application that performs real-time facial emotion detection using TensorFlow.js and a pre-trained TFLite model.",
-        imageUrl: "images/my_projects/Emotion Detection Website (TFLite on the web).png",
+        imageUrl: "images/my_projects/Emotion Detection Website (TFLite on the web).webp",
         link: "https://github.com/fnilvuwu/Facial-Emotion-Detection-System",
         website: "https://fnilvuwu.github.io/Facial-Emotion-Detection-System/",
         tags: [
@@ -70,7 +70,7 @@ const projects = [
         title: "Facial Age Estimation Website",
         description:
             "An interactive web app that estimates a person's age from their face in real-time using TensorFlow.js.",
-        imageUrl: "images/my_projects/Facial Age Estimation Website.png",
+        imageUrl: "images/my_projects/Facial Age Estimation Website.webp",
         link: "https://github.com/fnilvuwu/facial-age-estimation-website",
         website: "https://fnilvuwu.github.io/facial-age-estimation-website/",
         tags: [

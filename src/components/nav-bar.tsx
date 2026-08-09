@@ -41,7 +41,7 @@ export function NavBar() {
     }
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white/80 backdrop-blur-sm">
+        <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white backdrop-blur-sm">
             <div className="flex items-center justify-between max-w-7xl mx-auto">
                 <a href="#home" className="text-2xl font-bold text-black" onClick={(e) => handleNavClick(e, 'home')}>Fnilvuwu</a>
 

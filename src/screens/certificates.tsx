@@ -6,7 +6,7 @@ import { FilterControls } from '../components/filter-controls';
 const certifications = [
     {
         title: 'Generative Adversarial Networks (GANs)',
-        imageUrl: '/images/my_certificates/Generative Adversarial Networks (GANs).jpeg',
+        imageUrl: '/images/my_certificates/Generative Adversarial Networks (GANs).webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/GVKDBBB2OAUC',
         tags: [
             tags.find(t => t.name === 'Artificial Intelligence'),
@@ -18,7 +18,7 @@ const certifications = [
     },
     {
         title: 'Red Hat Certified System Administrator (RHCSA)',
-        imageUrl: '/images/my_certificates/Red Hat Certified System Administrator (RHCSA).png',
+        imageUrl: '/images/my_certificates/Red Hat Certified System Administrator (RHCSA).webp',
         link: 'https://www.credly.com/badges/68647f61-5159-44ac-ae53-b9de983931c4',
         tags: [
             tags.find(t => t.name === 'Linux'),
@@ -29,7 +29,7 @@ const certifications = [
     },
     {
         title: 'Google Data Analytics',
-        imageUrl: '/images/my_certificates/Google Data Analytics.jpeg',
+        imageUrl: '/images/my_certificates/Google Data Analytics.webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/LBYH449PQ9MF',
         tags: [
             tags.find(t => t.name === 'Data Analytics'),
@@ -40,7 +40,7 @@ const certifications = [
     },
     {
         title: 'TensorFlow Developer Certificate',
-        imageUrl: '/images/my_certificates/TensorFlow Developer Certificate.jpg',
+        imageUrl: '/images/my_certificates/TensorFlow Developer Certificate.webp',
         link: 'https://www.credential.net/a1fd9a03-8638-410d-b47b-b91ca5608a0a#acc.tqsjgKON',
         tags: [
             tags.find(t => t.name === 'Artificial Intelligence'),
@@ -51,7 +51,7 @@ const certifications = [
     },
     {
         title: 'Bangkit Machine Learning Graduate with Distinction',
-        imageUrl: '/images/my_certificates/Bangkit Machine Learning Graduate with Distinction.jpeg',
+        imageUrl: '/images/my_certificates/Bangkit Machine Learning Graduate with Distinction.webp',
         link: 'https://github.com/GymGuide',
         tags: [
             tags.find(t => t.name === 'Machine Learning'),
@@ -62,7 +62,7 @@ const certifications = [
     },
     {
         title: 'PKM - PI Pendanaan 2023',
-        imageUrl: '/images/my_certificates/PKM- PI Pendanaan 2023.jpeg',
+        imageUrl: '/images/my_certificates/PKM- PI Pendanaan 2023.webp',
         link: 'https://persuratan.kemdikbud.go.id/showpdf/tampilkandocument/363067',
         tags: [
             tags.find(t => t.name === 'Research'),
@@ -71,7 +71,7 @@ const certifications = [
     },
     {
         title: 'TensorFlow: Data and Deployment',
-        imageUrl: '/images/my_certificates/TensorFlow Data and Deployment.jpeg',
+        imageUrl: '/images/my_certificates/TensorFlow Data and Deployment.webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/HTAMCE68FUX5',
         tags: [
             tags.find(t => t.name === 'TensorFlow'),
@@ -82,7 +82,7 @@ const certifications = [
     },
     {
         title: 'DeepLearning.AI TensorFlow Developer',
-        imageUrl: '/images/my_certificates/DeepLearning.AI TensorFlow Developer.jpeg',
+        imageUrl: '/images/my_certificates/DeepLearning.AI TensorFlow Developer.webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/RGUQWJZADZQW',
         tags: [
             tags.find(t => t.name === 'Deep Learning'),
@@ -93,7 +93,7 @@ const certifications = [
     },
     {
         title: 'Machine Learning',
-        imageUrl: '/images/my_certificates/Machine Learning.jpeg',
+        imageUrl: '/images/my_certificates/Machine Learning.webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/XW36JLBZRNQP',
         tags: [
             tags.find(t => t.name === 'Machine Learning'),
@@ -103,7 +103,7 @@ const certifications = [
     },
     {
         title: 'Mathematics for Machine Learning and Data Science',
-        imageUrl: '/images/my_certificates/Mathematics for Machine Learning and Data Science.jpeg',
+        imageUrl: '/images/my_certificates/Mathematics for Machine Learning and Data Science.webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/8XPVYV8KBTNE',
         tags: [
             tags.find(t => t.name === 'Mathematics'),
@@ -113,7 +113,7 @@ const certifications = [
     },
     {
         title: 'IBM Cybersecurity Analyst',
-        imageUrl: '/images/my_certificates/IBM Cybersecurity Analyst.jpeg',
+        imageUrl: '/images/my_certificates/IBM Cybersecurity Analyst.webp',
         link: 'https://www.coursera.org/account/accomplishments/specialization/65MZW7VMU678',
         tags: [
             tags.find(t => t.name === 'Cybersecurity'),
@@ -123,7 +123,7 @@ const certifications = [
     },
     {
         title: '100 Days of Code: The Complete Python Pro Bootcamp',
-        imageUrl: '/images/my_certificates/100 Days of Code The Complete Python Pro Bootcamp.jpg',
+        imageUrl: '/images/my_certificates/100 Days of Code The Complete Python Pro Bootcamp.webp',
         link: 'https://www.udemy.com/certificate/UC-00e84d19-a804-40ef-831a-f3aeef40fc33',
         tags: [
             tags.find(t => t.name === 'Python'),
@@ -133,7 +133,7 @@ const certifications = [
     },
     {
         title: 'Certified International Specialist in Data Visualization (CISDV)',
-        imageUrl: '/images/my_certificates/Certified International Specialist in Data Visualization (CISDV).jpg',
+        imageUrl: '/images/my_certificates/Certified International Specialist in Data Visualization (CISDV).webp',
         link: 'https://drive.google.com/file/d/1wEHj9ukcqROFhuOS1h6i7wOpM3lUntra/view',
         tags: [
             tags.find(t => t.name === 'Data Visualization'),
@@ -142,7 +142,7 @@ const certifications = [
     },
     {
         title: 'Certified International Specialist in Data Visualization (CISDV) Training Certification',
-        imageUrl: '/images/my_certificates/Certified International Specialist in Data Visualization (CISDV) Training Certification.jpg',
+        imageUrl: '/images/my_certificates/Certified International Specialist in Data Visualization (CISDV) Training Certification.webp',
         link: 'https://drive.google.com/file/d/1vbLPYuvCUgTTTb8G_Lw_NFN35pRkV7Nc/view',
         tags: [
             tags.find(t => t.name === 'Data Visualization'),
@@ -151,7 +151,7 @@ const certifications = [
     },
     {
         title: 'Java (Basic)',
-        imageUrl: '/images/my_certificates/Java (Basic).png',
+        imageUrl: '/images/my_certificates/Java (Basic).webp',
         link: 'https://www.hackerrank.com/certificates/b4a6d351dc71',
         tags: [
             tags.find(t => t.name === 'Java'),
@@ -160,7 +160,7 @@ const certifications = [
     },
     {
         title: 'JavaScript (Basic)',
-        imageUrl: '/images/my_certificates/JavaScript (Basic).png',
+        imageUrl: '/images/my_certificates/JavaScript (Basic).webp',
         link: 'https://www.hackerrank.com/certificates/cd72c346478c',
         tags: [
             tags.find(t => t.name === 'JavaScript'),
@@ -169,7 +169,7 @@ const certifications = [
     },
     {
         title: 'JavaScript (Intermediate)',
-        imageUrl: '/images/my_certificates/JavaScript (Intermediate).png',
+        imageUrl: '/images/my_certificates/JavaScript (Intermediate).webp',
         link: 'https://www.hackerrank.com/certificates/905e95f78c58',
         tags: [
             tags.find(t => t.name === 'JavaScript'),
@@ -181,19 +181,19 @@ const certifications = [
     // --- Cloud Journey ---
     {
         title: 'Journey to Cloud: Envisioning Your Solution',
-        imageUrl: '/images/my_certificates/Journey to Cloud Envisioning Your Solution.png',
+        imageUrl: '/images/my_certificates/Journey to Cloud Envisioning Your Solution.webp',
         link: 'https://www.credly.com/badges/446e647b-f030-4727-90d8-91c4a24d9e01',
         tags: [tags.find(t => t.name === 'Cloud Computing'), tags.find(t => t.name === 'Cloud Architecture')].filter(Boolean) as Tag[],
     },
     {
         title: 'Journey to Cloud: Orchestrating Your Solution',
-        imageUrl: '/images/my_certificates/Journey to Cloud Orchestrating Your Solution.png',
+        imageUrl: '/images/my_certificates/Journey to Cloud Orchestrating Your Solution.webp',
         link: 'https://www.credly.com/badges/5d29a580-f765-4683-91e9-6e083168c132',
         tags: [tags.find(t => t.name === 'Cloud Computing'), tags.find(t => t.name === 'DevOps')].filter(Boolean) as Tag[],
     },
     {
         title: 'Journey to Cloud: Transforming Your Culture',
-        imageUrl: '/images/my_certificates/Journey to Cloud Transforming Your Culture.png',
+        imageUrl: '/images/my_certificates/Journey to Cloud Transforming Your Culture.webp',
         link: 'https://www.credly.com/badges/ea8e8b7e-7925-466a-b2fb-63fe4140f537',
         tags: [tags.find(t => t.name === 'Cloud Computing'), tags.find(t => t.name === 'Digital Transformation')].filter(Boolean) as Tag[],
     },
@@ -201,31 +201,31 @@ const certifications = [
     // --- Remaining grouped logically (Web, Mobile, Programming, etc.) ---
     {
         title: 'Belajar Dasar Structured Query Language (SQL)',
-        imageUrl: '/images/my_certificates/Belajar Dasar Structured Query Language (SQL).jpg',
+        imageUrl: '/images/my_certificates/Belajar Dasar Structured Query Language (SQL).webp',
         link: 'https://www.dicoding.com/certificates/1OP81234LZQK',
         tags: [tags.find(t => t.name === 'SQL'), tags.find(t => t.name === 'Database')].filter(Boolean) as Tag[],
     },
     {
         title: 'Belajar Membuat Aplikasi Web dengan React',
-        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Web dengan React.jpg',
+        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Web dengan React.webp',
         link: 'https://www.dicoding.com/certificates/GRX5397JVZ0M',
         tags: [tags.find(t => t.name === 'React'), tags.find(t => t.name === 'JavaScript'), tags.find(t => t.name === 'Web Development')].filter(Boolean) as Tag[],
     },
     {
         title: 'Belajar Membuat Aplikasi Flutter untuk Pemula',
-        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Flutter untuk Pemula.jpg',
+        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Flutter untuk Pemula.webp',
         link: 'https://www.dicoding.com/certificates/53XENGW19XRN',
         tags: [tags.find(t => t.name === 'Flutter'), tags.find(t => t.name === 'Mobile Development')].filter(Boolean) as Tag[],
     },
     {
         title: 'Belajar Membuat Aplikasi Android untuk Pemula',
-        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Android untuk Pemula.jpg',
+        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Android untuk Pemula.webp',
         link: 'https://www.dicoding.com/certificates/2VX3JM1QVPYQ',
         tags: [tags.find(t => t.name === 'Android'), tags.find(t => t.name === 'Mobile Development'), tags.find(t => t.name === 'Kotlin')].filter(Boolean) as Tag[],
     },
     {
         title: 'Belajar Membuat Aplikasi Flutter untuk Pemula',
-        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Flutter untuk Pemula.jpg',
+        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Flutter untuk Pemula.webp',
         link: 'https://www.dicoding.com/certificates/53XENGW19XRN',
         tags: [
             tags.find(t => t.name === 'Flutter'),
@@ -235,7 +235,7 @@ const certifications = [
     },
     {
         title: 'Belajar Prinsip Pemrograman SOLID',
-        imageUrl: '/images/my_certificates/Belajar Prinsip Pemrograman SOLID.jpg',
+        imageUrl: '/images/my_certificates/Belajar Prinsip Pemrograman SOLID.webp',
         link: 'https://www.dicoding.com/certificates/81P236YQ8XOY',
         tags: [
             tags.find(t => t.name === 'Software Engineering'),
@@ -245,7 +245,7 @@ const certifications = [
     },
     {
         title: 'Memulai Dasar Pemrograman untuk Menjadi Pengembang Software',
-        imageUrl: '/images/my_certificates/Memulai Dasar Pemrograman untuk Menjadi Pengembang Software.jpg',
+        imageUrl: '/images/my_certificates/Memulai Dasar Pemrograman untuk Menjadi Pengembang Software.webp',
         link: 'https://www.dicoding.com/certificates/QLZ9QO9R7Z5D',
         tags: [
             tags.find(t => t.name === 'Programming'),
@@ -255,7 +255,7 @@ const certifications = [
     },
     {
         title: 'Memulai Pemrograman Dengan Dart',
-        imageUrl: '/images/my_certificates/Memulai Pemrograman dengan Dart.jpg',
+        imageUrl: '/images/my_certificates/Memulai Pemrograman dengan Dart.webp',
         link: 'https://www.dicoding.com/certificates/JMZV908ENPN9',
         tags: [
             tags.find(t => t.name === 'Dart'),
@@ -264,7 +264,7 @@ const certifications = [
     },
     {
         title: 'Memulai Pemrograman Dengan Kotlin',
-        imageUrl: '/images/my_certificates/Memulai Pemrograman dengan Kotlin.jpg',
+        imageUrl: '/images/my_certificates/Memulai Pemrograman dengan Kotlin.webp',
         link: 'https://www.dicoding.com/certificates/JLX1DRRM2Z72',
         tags: [
             tags.find(t => t.name === 'Kotlin'),
@@ -274,7 +274,7 @@ const certifications = [
     },
     {
         title: 'Pengenalan ke Logika Pemrograman (Programming Logic 101)',
-        imageUrl: '/images/my_certificates/Pengenalan ke Logika Pemrograman (Programming Logic 101).jpg',
+        imageUrl: '/images/my_certificates/Pengenalan ke Logika Pemrograman (Programming Logic 101).webp',
         link: 'https://www.dicoding.com/certificates/QLZ9QN5O7Z5D',
         tags: [
             tags.find(t => t.name === 'Programming'),
@@ -284,7 +284,7 @@ const certifications = [
     },
     {
         title: 'Belajar Dasar AI',
-        imageUrl: '/images/my_certificates/Belajar Dasar AI.jpg',
+        imageUrl: '/images/my_certificates/Belajar Dasar AI.webp',
         link: 'https://www.dicoding.com/certificates/MRZMN4V50PYQ',
         tags: [
             tags.find(t => t.name === 'Artificial Intelligence'),
@@ -294,7 +294,7 @@ const certifications = [
     },
     {
         title: 'Belajar Dasar Pemrograman Web',
-        imageUrl: '/images/my_certificates/Belajar Dasar Pemrograman Web.jpg',
+        imageUrl: '/images/my_certificates/Belajar Dasar Pemrograman Web.webp',
         link: 'https://www.dicoding.com/certificates/98XWE486LXM3',
         tags: [
             tags.find(t => t.name === 'Web Development'),
@@ -304,7 +304,7 @@ const certifications = [
     },
     {
         title: 'Belajar Membuat Front-End Web untuk Pemula',
-        imageUrl: '/images/my_certificates/Belajar Membuat Front-End Web untuk Pemula.jpg',
+        imageUrl: '/images/my_certificates/Belajar Membuat Front-End Web untuk Pemula.webp',
         link: 'https://www.dicoding.com/certificates/53XEDJ6YVPRN',
         tags: [
             tags.find(t => t.name === 'Front-End Development'),
@@ -314,7 +314,7 @@ const certifications = [
     },
     {
         title: 'Belajar Membuat Aplikasi Web dengan React',
-        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Web dengan React.jpg',
+        imageUrl: '/images/my_certificates/Belajar Membuat Aplikasi Web dengan React.webp',
         link: 'https://www.dicoding.com/certificates/GRX5397JVZ0M',
         tags: [
             tags.find(t => t.name === 'React'),
@@ -324,7 +324,7 @@ const certifications = [
     },
     {
         title: 'Belajar Dasar Pemrograman JavaScript',
-        imageUrl: '/images/my_certificates/Belajar Dasar Pemrograman JavaScript.jpg',
+        imageUrl: '/images/my_certificates/Belajar Dasar Pemrograman JavaScript.webp',
         link: 'https://www.dicoding.com/certificates/81P2L3QDQZOY',
         tags: [
             tags.find(t => t.name === 'JavaScript'),

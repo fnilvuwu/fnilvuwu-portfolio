@@ -18,10 +18,10 @@ export const awards: Award[] = [
     {
         title: '1st Winner OpenTheGate Hackathon 2025 (BSS Parking)',
         description: 'Issued by BSS Parking',
-        certificateUrl: '/images/my_awards/openthegate-2025-certificate.jfif',
-        photoUrl: '/images/my_awards/openthegate-2025-photo.jfif',
+        certificateUrl: '/images/my_awards/openthegate-2025-certificate.webp',
+        photoUrl: '/images/my_awards/openthegate-2025-photo.webp',
         date: 'Jun 2025',
-        link: '/images/my_awards/openthegate-2025-certificate.jfif',
+        link: '/images/my_awards/openthegate-2025-certificate.webp',
         tags: [
             tags.find(t => t.name === 'Software Development'),
             tags.find(t => t.name === 'Artificial Intelligence'),
@@ -30,10 +30,10 @@ export const awards: Award[] = [
     {
         title: '2nd Winner Makassar Hackathon 2024 (Binar Academy)',
         description: 'Issued by Dispora Makassar x Binar Academy',
-        certificateUrl: '/images/my_awards/makassar-hackathon-2024-certificate.jfif',
-        photoUrl: '/images/my_awards/makassar-hackathon-2024-photo.jfif',
+        certificateUrl: '/images/my_awards/makassar-hackathon-2024-certificate.webp',
+        photoUrl: '/images/my_awards/makassar-hackathon-2024-photo.webp',
         date: 'Jun 2024',
-        link: '/images/my_awards/makassar-hackathon-2024-certificate.jfif',
+        link: '/images/my_awards/makassar-hackathon-2024-certificate.webp',
         tags: [
             tags.find(t => t.name === 'Software Development'),
         ].filter(Boolean) as Tag[],
@@ -41,8 +41,8 @@ export const awards: Award[] = [
     {
         title: 'PKM-PI Funding 2023',
         description: 'Received funding for Program Kreativitas Mahasiswa - Penelitian Inovatif (PKM-PI), a national student research program by the Ministry of Education.',
-        certificateUrl: '/images/my_awards/pkm-pi-2023-certificate.jfif',
-        photoUrl: '/images/my_awards/pkm-pi-2023-photo.jfif',
+        certificateUrl: '/images/my_awards/pkm-pi-2023-certificate.webp',
+        photoUrl: '/images/my_awards/pkm-pi-2023-photo.webp',
         date: 'November 2023',
         link: 'https://persuratan.kemdikbud.go.id/showpdf/tampilkandocument/363067',
         tags: [
@@ -54,10 +54,10 @@ export const awards: Award[] = [
     {
         title: '1st Winner of Design Graphic Competition (ENIAC VOL. II)',
         description: 'Issued by Eleven Information and Technology Community, SMA Negeri 11 Makassar',
-        certificateUrl: '/images/my_awards/eniac-vol-2-certificate.jfif',
-        photoUrl: '/images/my_awards/eniac-vol-2-photo.jpg',
+        certificateUrl: '/images/my_awards/eniac-vol-2-certificate.webp',
+        photoUrl: '/images/my_awards/eniac-vol-2-photo.webp',
         date: 'Oct 2019',
-        link: '/images/my_awards/eniac-vol-2-certificate.jfif',
+        link: '/images/my_awards/eniac-vol-2-certificate.webp',
         tags: [
             tags.find(t => t.name === 'Photo Editing'),
         ].filter(Boolean) as Tag[],
@@ -65,10 +65,10 @@ export const awards: Award[] = [
     {
         title: '2nd Winner Videography (Justice Show Politeknik Negeri Ujung Pandang)',
         description: 'Issued by Pers Mahasiswa Politeknik Negeri Ujung Pandang, Politeknik Negeri Ujung Pandang (PNUP)',
-        certificateUrl: '/images/my_awards/justice-show-videography-photo-1.jpg',
-        photoUrl: '/images/my_awards/justice-show-videography-photo-2.jpg',
+        certificateUrl: '/images/my_awards/justice-show-videography-photo-1.webp',
+        photoUrl: '/images/my_awards/justice-show-videography-photo-2.webp',
         date: 'Jul 2019',
-        link: '/images/my_awards/justice-show-videography-photo-1.jpg',
+        link: '/images/my_awards/justice-show-videography-photo-1.webp',
         tags: [
             tags.find(t => t.name === 'Video Editing'),
         ].filter(Boolean) as Tag[],
@@ -76,10 +76,10 @@ export const awards: Award[] = [
     {
         title: '1st Winner of Design Graphic Competition (ENIAC VOL. I)',
         description: 'Issued by Eleven Information and Technology Community, SMA Negeri 11 Makassar',
-        certificateUrl: '/images/my_awards/eniac-vol-1-certificate.jfif',
-        photoUrl: '/images/my_awards/eniac-vol-1-photo.jpg',
+        certificateUrl: '/images/my_awards/eniac-vol-1-certificate.webp',
+        photoUrl: '/images/my_awards/eniac-vol-1-photo.webp',
         date: 'Sep 2018',
-        link: '/images/my_awards/eniac-vol-1-certificate.jfif',
+        link: '/images/my_awards/eniac-vol-1-certificate.webp',
         tags: [
             tags.find(t => t.name === 'Photo Editing'),
         ].filter(Boolean) as Tag[],
