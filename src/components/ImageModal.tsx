@@ -33,10 +33,22 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
 
     const [scale, setScale] = useState(1);
     const [translate, setTranslate] = useState({ x: 0, y: 0 });
+    const [interacting, setInteracting] = useState(false);
 
     const containerRef = useRef<HTMLDivElement | null>(null);
     const pointersRef = useRef<Map<number, { x: number; y: number }>>(new Map());
     const lastPinchDistRef = useRef<number | null>(null);
+    const interactTimerRef = useRef<number | null>(null);
+
+    const setInteractingTemporarily = () => {
+        setInteracting(true);
+        if (interactTimerRef.current) {
+            window.clearTimeout(interactTimerRef.current);
+        }
+        interactTimerRef.current = window.setTimeout(() => {
+            setInteracting(false);
+        }, 150);
+    };
 
     const isZoomed = scale > 1;
 
@@ -46,6 +58,7 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
             setState({ src: detail.src, alt: detail.alt });
             setScale(1);
             setTranslate({ x: 0, y: 0 });
+            setInteracting(false);
             pointersRef.current = new Map();
             lastPinchDistRef.current = null;
         };
@@ -53,30 +66,76 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
         return () => window.removeEventListener(IMAGE_MODAL_OPEN_EVENT, onOpen);
     }, []);
 
+    // Clean up interact timer on unmount
+    useEffect(() => {
+        return () => {
+            if (interactTimerRef.current) {
+                window.clearTimeout(interactTimerRef.current);
+            }
+        };
+    }, []);
+
     const close = useCallback(() => {
         setState(null);
         setScale(1);
         setTranslate({ x: 0, y: 0 });
+        setInteracting(false);
         pointersRef.current = new Map();
         lastPinchDistRef.current = null;
+        if (interactTimerRef.current) {
+            window.clearTimeout(interactTimerRef.current);
+            interactTimerRef.current = null;
+        }
+    }, []);
+
+    // Clamp the pan so the image edges stay within reachable view bounds.
+    // Extra factor lets the border cross the viewport slightly so the image
+    // can still be centered against an edge.
+    const clampTranslate = useCallback((value: { x: number; y: number }, scaleValue: number) => {
+        const el = containerRef.current;
+        const img = el?.querySelector('img');
+        if (!el || !img) return value;
+
+        const viewW = el.clientWidth;
+        const viewH = el.clientHeight;
+        const imgW = img.clientWidth;
+        const imgH = img.clientHeight;
+        const maxX = Math.max(0, (imgW * scaleValue - viewW) / 2) + viewW * 0.15;
+        const maxY = Math.max(0, (imgH * scaleValue - viewH) / 2) + viewH * 0.15;
+
+        return {
+            x: Math.min(maxX, Math.max(-maxX, value.x)),
+            y: Math.min(maxY, Math.max(-maxY, value.y)),
+        };
     }, []);
 
     const zoomAt = useCallback(
         (nextScale: number, anchorX?: number, anchorY?: number) => {
-            setScale(prev => {
+            setScale(prevScale => {
                 const clamped = Math.min(MAX_SCALE, Math.max(MIN_SCALE, nextScale));
                 const rect = containerRef.current?.getBoundingClientRect();
                 const cx = anchorX ?? (rect ? rect.width / 2 : 0);
                 const cy = anchorY ?? (rect ? rect.height / 2 : 0);
-                const ratio = clamped / prev;
-                setTranslate(t => ({
-                    x: cx - (cx - t.x) * ratio,
-                    y: cy - (cy - t.y) * ratio,
-                }));
+                const ox = rect ? rect.width / 2 : 0;
+                const oy = rect ? rect.height / 2 : 0;
+                const ratio = clamped / prevScale;
+                const ax = cx - ox;
+                const ay = cy - oy;
+
+                setTranslate(t => {
+                    if (clamped <= 1) {
+                        return { x: 0, y: 0 };
+                    }
+                    const next = {
+                        x: ax - (ax - t.x) * ratio,
+                        y: ay - (ay - t.y) * ratio,
+                    };
+                    return clampTranslate(next, clamped);
+                });
                 return clamped;
             });
         },
-        []
+        [clampTranslate]
     );
 
     const resetZoom = useCallback(() => {
@@ -108,6 +167,7 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
 
         const onWheel = (e: WheelEvent) => {
             e.preventDefault();
+            setInteractingTemporarily();
             const el = containerRef.current;
             const rect = el?.getBoundingClientRect();
             zoomAt(
@@ -125,11 +185,12 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
             window.removeEventListener('keydown', onKeyDown);
             el?.removeEventListener('wheel', onWheel);
         };
-    }, [state, close, scale, zoomAt]);
+    }, [state, close, scale, zoomAt, setInteractingTemporarily]);
 
     const onPointerDown = (e: ReactPointerEvent<HTMLDivElement>) => {
         e.currentTarget.setPointerCapture(e.pointerId);
         pointersRef.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        setInteracting(true);
 
         if (pointersRef.current.size === 2) {
             const [p1, p2] = [...pointersRef.current.values()];
@@ -148,15 +209,19 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
             const [p1, p2] = [...pointers.values()];
             const dist = Math.hypot(p2.x - p1.x, p2.y - p1.y);
             if (lastPinchDistRef.current && lastPinchDistRef.current > 0) {
-                const midX = (p1.x + p2.x) / 2;
-                const midY = (p1.y + p2.y) / 2;
+                // anchor point relative to the container (not the viewport)
+                const rect = containerRef.current?.getBoundingClientRect();
+                const rectLeft = rect ? rect.left : 0;
+                const rectTop = rect ? rect.top : 0;
+                const midX = (p1.x + p2.x) / 2 - rectLeft;
+                const midY = (p1.y + p2.y) / 2 - rectTop;
                 zoomAt(scale * (dist / lastPinchDistRef.current), midX, midY);
             }
             lastPinchDistRef.current = dist;
         } else if (pointers.size === 1 && isZoomed) {
             const dx = e.clientX - prev.x;
             const dy = e.clientY - prev.y;
-            setTranslate(t => ({ x: t.x + dx, y: t.y + dy }));
+            setTranslate(t => clampTranslate({ x: t.x + dx, y: t.y + dy }, scale));
         }
     };
 
@@ -165,6 +230,9 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
         if (pointersRef.current.size < 2) {
             lastPinchDistRef.current = null;
         }
+        if (pointersRef.current.size === 0) {
+            setInteracting(false);
+        }
         try {
             e.currentTarget.releasePointerCapture(e.pointerId);
         } catch {
@@ -172,9 +240,12 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
         }
     };
 
-    const onDoubleClick = () => {
+    const onDoubleClick = (e: ReactPointerEvent<HTMLDivElement>) => {
+        const rect = containerRef.current?.getBoundingClientRect();
+        const anchorX = rect ? e.clientX - rect.left : undefined;
+        const anchorY = rect ? e.clientY - rect.top : undefined;
         if (scale === 1) {
-            zoomAt(DOUBLE_TAP_SCALE);
+            zoomAt(DOUBLE_TAP_SCALE, anchorX, anchorY);
         } else {
             resetZoom();
         }
@@ -213,8 +284,10 @@ export function ImageModalProvider({ children }: { children: ReactNode }) {
                             src={state.src}
                             alt={state.alt || ''}
                             draggable={false}
-                            className={`max-w-[90vw] max-h-[85vh] object-contain mx-auto my-auto touch-none transition-transform duration-100 cursor-zoom-in`}
+                            className={`max-w-[90vw] max-h-[85vh] object-contain mx-auto my-auto touch-none cursor-zoom-in ${interacting ? '' : 'transition-transform duration-200 ease-out'}`}
                             style={{
+                                transformOrigin: 'center',
+                                willChange: 'transform',
                                 transform: `translate(${translate.x}px, ${translate.y}px) scale(${scale})`,
                             }}
                         />
