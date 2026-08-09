@@ -1,5 +1,4 @@
 
-import { Download } from 'lucide-react';
 
 export default function AboutPage() {
     // put hobby, and contact here instead
@@ -44,7 +43,7 @@ export default function AboutPage() {
                         <p className="leading-relaxed text-center">
                             Feel free to explore my portfolio to see how my skills and services can contribute to your success. Let's work together!
                         </p>
-                        
+
                         <div className="flex justify-center mt-12 pt-8">
                             <a
                                 href="/CV_ATS_Rahmatullah.pdf"
@@ -65,12 +64,12 @@ export default function AboutPage() {
                                     e.currentTarget.style.color = '#FF5C00';
                                 }}
                             >
-                                [ Download CV (10-08-2026) ]
+                                [ Download CV ]
                             </a>
 
                             <span className="mt-3 text-xs text-gray-400">
-        Last update 20 Oct 2025
-    </span>
+                                Last updated: 10 Aug 2026
+                            </span>
                         </div>
                     </div>
                 </section>
