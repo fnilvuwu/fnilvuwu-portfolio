@@ -47,8 +47,8 @@ export default function AboutPage() {
                         
                         <div className="flex justify-center mt-12 pt-8">
                             <a
-                                href="/CV_ATS_Rahmatullah_12_08_2025.pdf"
-                                download="CV_ATS_Rahmatullah_12_08_2025.pdf"
+                                href="/CV_ATS_Rahmatullah.pdf"
+                                download="CV_ATS_Rahmatullah.pdf"
                                 className="inline-flex items-center gap-2 px-8 py-3 text-sm tracking-wider uppercase transition-all duration-200"
                                 style={{
                                     backgroundColor: 'transparent',
@@ -65,8 +65,12 @@ export default function AboutPage() {
                                     e.currentTarget.style.color = '#FF5C00';
                                 }}
                             >
-                                [ Download CV ]
+                                [ Download CV (10-08-2026) ]
                             </a>
+
+                            <span className="mt-3 text-xs text-gray-400">
+        Last update 20 Oct 2025
+    </span>
                         </div>
                     </div>
                 </section>

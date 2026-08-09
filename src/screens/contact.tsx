@@ -1,4 +1,4 @@
-import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, MapPinIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline';
 import { Footer } from '../components/footer';
 
 export default function ContactPage() {
@@ -35,7 +35,7 @@ export default function ContactPage() {
                                         <MapPinIcon className="h-6 w-6 text-gray-600" />
                                         <div>
                                             <p className="font-medium" style={{ color: '#FF5C00' }}>Location</p>
-                                            <p className="text-muted-foreground" >Makassar, Indonesia</p>
+                                            <p className="text-gray-600 hover:text-[#FF5C00] transition-colors">Makassar, Indonesia</p>
                                         </div>
                                     </div>
 
@@ -76,17 +76,44 @@ export default function ContactPage() {
                                 </div>
                             </section>
 
-                            {/* Map */}
+                            {/* Form */}
                             <section className="md:w-1/2">
-                                <iframe
-                                    title="Google Maps Location of Hasanuddin University"
-                                    width="100%"
-                                    height="450"
-                                    style={{ border: 0 }}
-                                    loading="lazy"
-                                    allowFullScreen
-                                    src="https://www.google.com/maps?q=Hasanuddin+University&z=18&output=embed"
-                                ></iframe>
+                                <div className="bg-white rounded-2xl p-6 md:p-8 border border-gray-200 shadow-sm">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-6">
+                                        Send a Message
+                                    </h3>
+                                    <form className="space-y-6">
+                                        <div className="space-y-2">
+                                            <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+                                                Subject
+                                            </label>
+                                            <input
+                                                type="text"
+                                                id="subject"
+                                                className="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF5C00] focus:border-transparent transition-all"
+                                                placeholder="What's this about?"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                                                Message
+                                            </label>
+                                            <textarea
+                                                id="message"
+                                                rows={4}
+                                                className="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF5C00] focus:border-transparent transition-all resize-none"
+                                                placeholder="Your message..."
+                                            ></textarea>
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            className="w-full bg-[#FF5C00] hover:bg-[#e65300] text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition-colors"
+                                        >
+                                            <PaperAirplaneIcon className="h-5 w-5" />
+                                            <span>Send Message</span>
+                                        </button>
+                                    </form>
+                                </div>
                             </section>
                         </div>
                     </section>
