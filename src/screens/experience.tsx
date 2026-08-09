@@ -1,4 +1,6 @@
 
+import { ZoomableImage } from '../components/ImageModal';
+
 const experiences = [
     {
         title: "ML Engineer Division",
@@ -125,21 +127,12 @@ export default function ExperiencePage() {
 
                                             {/* Image Side */}
                                             <div className={`w-1/2 ${isLeft ? 'pl-12' : 'pr-12'}`}>
-                                                <a
-                                                    href={exp.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="block"
-                                                >
-                                                    <div className="relative h-56 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300">
-                                                        <img
-                                                            loading="lazy"
-                                                            src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
-                                                            alt={exp.title}
-                                                            className="object-contain object-center w-full h-full bg-white"
-                                                        />
-                                                    </div>
-                                                </a>
+                                                <ZoomableImage
+                                                src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
+                                                alt={exp.title}
+                                                className="h-56 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+                                                imgClassName="object-contain object-center w-full h-full bg-white"
+                                            />
                                             </div>
                                         </div>
 
@@ -149,21 +142,12 @@ export default function ExperiencePage() {
                                             <div className="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-[#FF5C00] rounded-full border-4 border-white shadow-lg z-10"></div>
 
                                             <div className="space-y-4">
-                                                <a
-                                                    href={exp.link}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="block"
-                                                >
-                                                    <div className="relative h-48 rounded-lg overflow-hidden shadow-md">
-                                                        <img
-                                                            loading="lazy"
-                                                            src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
-                                                            alt={exp.title}
-                                                            className="object-contain object-center w-full h-full bg-white"
-                                                        />
-                                                    </div>
-                                                </a>
+                                                <ZoomableImage
+                                                    src={exp.imageUrl.startsWith('/') ? exp.imageUrl : '/' + exp.imageUrl}
+                                                    alt={exp.title}
+                                                    className="h-48 rounded-lg overflow-hidden shadow-md"
+                                                    imgClassName="object-contain object-center w-full h-full bg-white"
+                                                />
                                                 <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
                                                     <a
                                                         href={exp.link}

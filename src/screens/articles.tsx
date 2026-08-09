@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { FilterControls } from '../components/filter-controls';
+import { ZoomableImage } from '../components/ImageModal';
 import type { Tag } from './services';
 import { tags } from './services';
 
@@ -74,11 +75,11 @@ export default function ArticlesPage({ limit, showViewAll = false }: ArticlesPag
                         {displayedArticles.map((article, index) => (
                             <div key={index} className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8">
                                 <div className="w-full h-48 sm:w-96 sm:h-56 mb-4 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative bg-white">
-                                    <img
-                                        loading="lazy"
+                                    <ZoomableImage
                                         src={article.imageUrl.startsWith('/') ? article.imageUrl : '/' + article.imageUrl}
                                         alt={article.title}
-                                        className="object-contain object-center rounded-lg absolute inset-0 w-full h-full"
+                                        className="rounded-lg"
+                                        imgClassName="object-contain object-center rounded-lg w-full h-full"
                                     />
                                 </div>
                                 <div className="flex flex-col space-y-2 flex-grow text-center sm:text-left">

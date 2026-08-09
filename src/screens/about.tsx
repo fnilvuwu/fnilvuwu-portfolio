@@ -1,3 +1,5 @@
+import { ZoomableImage } from '../components/ImageModal';
+
 export default function AboutPage() {
     // put hobby, and contact here instead
     return (
@@ -12,14 +14,11 @@ export default function AboutPage() {
                 <section className="mb-12">
                     <div className="flex flex-col items-center p-4 space-y-6 mb-8">
                         <div className="w-40 h-40 rounded-full overflow-hidden" style={{ border: '2px solid #FF5C00' }}>
-                            <img
-                                loading="lazy"
+                            <ZoomableImage
                                 src="/images/me.webp"
                                 alt="Rahmatullah R."
-                                width={160}
-                                height={160}
-                                className="w-full h-full object-cover"
-                                style={{ width: '100%', height: 'auto' }}
+                                className="rounded-full"
+                                imgClassName="w-full h-full object-cover"
                             />
                         </div>
                     </div>

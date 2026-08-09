@@ -2,6 +2,7 @@ import { useState } from 'react';
 import type { Tag } from './services';
 import { tags } from './services';
 import { FilterControls } from '../components/filter-controls';
+import { ZoomableImage } from '../components/ImageModal';
 
 const certifications = [
     {
@@ -379,16 +380,20 @@ export default function CertificatesPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                         {filteredCerts.map((cert, index) => (
                             <div key={index} className="flex flex-col items-center text-center">
-                                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center w-full group">
-                                    <div className="w-full h-48 sm:h-56 mb-4 relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1">
-                                        <img
-                                            loading="lazy"
-                                            src={cert.imageUrl}
-                                            alt={cert.title}
-                                            className="object-contain object-center absolute inset-0 w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    </div>
-                                    <h3 className="text-lg font-medium mt-4">{cert.title}</h3>
+                                <ZoomableImage
+                                        src={cert.imageUrl}
+                                        alt={`${cert.title} certificate`}
+                                        className="w-full h-48 sm:h-56 mb-4 bg-white rounded-lg shadow-sm border border-slate-100 group transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+                                        imgClassName="object-contain object-center w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <a
+                                        href={cert.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex flex-col items-center w-full group"
+                                    >
+                                        <h3 className="text-lg font-medium mt-4">{cert.title}</h3>
+                                    </a>
                                     <div className="flex flex-wrap gap-2 mt-2 justify-center">
                                         {cert.tags.map((tag, i) => (
                                             <span
@@ -405,8 +410,7 @@ export default function CertificatesPage() {
                                             </span>
                                         ))}
                                     </div>
-                                </a>
-                            </div>
+                                </div>
                         ))}
                     </div>
                 </section>

@@ -1,5 +1,6 @@
 import type { Tag } from './services';
 import { tags } from './services';
+import { ZoomableImage } from '../components/ImageModal';
 
 // Reuse projects data from projects.tsx
 const projects = [
@@ -73,20 +74,13 @@ export default function HomeProjects() {
                                 className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8 pb-12 last:pb-0"
                                 style={{ borderBottom: index < limitedProjects.length - 1 ? '1px solid hsl(var(--border))' : 'none' }}
                             >
-                                <a
-                                    href={project.website}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full h-48 sm:w-96 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative rounded-lg overflow-hidden"
+                                <ZoomableImage
+                                    src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
+                                    alt={project.title}
+                                    className="w-full h-48 sm:w-96 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 rounded-lg"
                                     style={{ backgroundColor: 'hsl(var(--muted))', border: '1px solid hsl(var(--border))' }}
-                                >
-                                    <img
-                                        loading="lazy"
-                                        src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
-                                        alt={project.title}
-                                        className="object-contain object-center absolute inset-0 w-full h-full transition-transform duration-300 hover:scale-105"
-                                    />
-                                </a>
+                                    imgClassName="object-contain object-center w-full h-full transition-transform duration-300 hover:scale-105"
+                                />
                                 <div className="flex flex-col space-y-3 flex-grow text-center sm:text-left">
                                     <a
                                         href={project.link}

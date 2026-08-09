@@ -1,4 +1,5 @@
 import { articles } from './articles';
+import { ZoomableImage } from '../components/ImageModal';
 
 export default function HomeArticles() {
     // Show only first 3 articles
@@ -28,11 +29,12 @@ export default function HomeArticles() {
                                 style={{ borderBottom: index < limitedArticles.length - 1 ? '1px solid hsl(var(--border))' : 'none' }}
                             >
                                 <div className="w-full h-48 sm:w-96 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative rounded-lg overflow-hidden" style={{ backgroundColor: 'hsl(var(--muted))', border: '1px solid hsl(var(--border))' }}>
-                                    <img
-                                        loading="lazy"
+                                    <ZoomableImage
                                         src={article.imageUrl.startsWith('/') ? article.imageUrl : '/' + article.imageUrl}
                                         alt={article.title}
-                                        className="object-contain object-center absolute inset-0 w-full h-full transition-transform duration-300 hover:scale-105"
+                                        className="rounded-lg"
+                                        style={{ backgroundColor: 'hsl(var(--muted))', border: '1px solid hsl(var(--border))' }}
+                                        imgClassName="object-contain object-center w-full h-full transition-transform duration-300 hover:scale-105"
                                     />
                                 </div>
                                 <div className="flex flex-col space-y-3 flex-grow text-center sm:text-left">

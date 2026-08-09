@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import { FilterControls } from '../components/filter-controls';
+import { ZoomableImage } from '../components/ImageModal';
 import type { Tag } from './services';
 import { tags } from './services';
 
@@ -133,19 +134,12 @@ export default function ProjectsPage() {
                                 key={index}
                                 className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-8"
                             >
-                                <a
-                                    href={project.website}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="w-full h-48 sm:w-96 sm:h-56 mb-4 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 relative bg-white"
-                                >
-                                    <img
-                                        loading="lazy"
-                                        src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
-                                        alt={project.title}
-                                        className="object-contain object-center rounded-lg absolute inset-0 w-full h-full"
-                                    />
-                                </a>
+                                <ZoomableImage
+                                    src={project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}
+                                    alt={project.title}
+                                    className="w-full h-48 sm:w-96 sm:h-56 mb-4 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0 bg-white"
+                                    imgClassName="object-contain object-center rounded-lg w-full h-full"
+                                />
                                 <div className="flex flex-col space-y-2 flex-grow text-center sm:text-left">
                                     <a
                                         href={project.link}

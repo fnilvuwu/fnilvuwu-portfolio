@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FilterControls } from '../components/filter-controls';
+import { ZoomableImage } from '../components/ImageModal';
 import type { Tag } from './services';
 import { tags } from './services';
 
@@ -139,33 +140,19 @@ export default function AwardsPage() {
                                 style={{ borderBottom: index < filteredAwards.length - 1 ? '1px solid hsl(var(--border))' : 'none' }}
                             >
                                 <div className="flex flex-row gap-3 w-full sm:w-[28rem] lg:w-[32rem] h-48 sm:h-56 mb-6 sm:mb-0 flex-shrink-0 mx-auto sm:mx-0">
-                                    <a
-                                        href={award.certificateUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 block ${award.photoUrl ? 'w-1/2' : 'w-full'}`}
-                                    >
-                                        <img
-                                            loading="lazy"
-                                            src={award.certificateUrl}
-                                            alt={`${award.title} Certificate`}
-                                            className="object-contain object-center absolute inset-0 w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    </a>
+                                    <ZoomableImage
+                                        src={award.certificateUrl}
+                                        alt={`${award.title} Certificate`}
+                                        className={`bg-white rounded-lg shadow-sm border border-slate-100 group transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${award.photoUrl ? 'w-1/2' : 'w-full'}`}
+                                        imgClassName="object-contain object-center w-full h-full p-2 transition-transform duration-500 group-hover:scale-105"
+                                    />
                                     {award.photoUrl && (
-                                        <a
-                                            href={award.photoUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="relative bg-white rounded-lg shadow-sm border border-slate-100 overflow-hidden group transition-all duration-300 hover:shadow-md hover:-translate-y-1 block w-1/2"
-                                        >
-                                            <img
-                                                loading="lazy"
-                                                src={award.photoUrl}
-                                                alt={`${award.title} award presentation`}
-                                                className="object-cover object-center absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-105"
-                                            />
-                                        </a>
+                                        <ZoomableImage
+                                            src={award.photoUrl}
+                                            alt={`${award.title} award presentation`}
+                                            className="bg-white rounded-lg shadow-sm border border-slate-100 group transition-all duration-300 hover:shadow-md hover:-translate-y-1 w-1/2"
+                                            imgClassName="object-cover object-center w-full h-full transition-transform duration-500 group-hover:scale-105"
+                                        />
                                     )}
                                 </div>
                                 <div className="flex flex-col space-y-2 flex-grow text-center sm:text-left">
